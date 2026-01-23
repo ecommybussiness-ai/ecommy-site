@@ -48,4 +48,201 @@ nav a:hover{
   background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
   url("https://images.unsplash.com/photo-1556155092-8707de31f9c4") center/cover;
   color:#fff;
-  tex
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:20px;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  background:#22c55e;
+  color:#fff;
+  padding:15px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#16a34a;
+}
+
+/* SECTION */
+.section{
+  padding:60px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.card h3{
+  margin-bottom:15px;
+}
+
+/* ABOUT */
+.about{
+  background:#fff;
+  padding:40px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+/* CONTACT */
+.contact{
+  background:#0f172a;
+  color:#fff;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.contact p{
+  margin:10px 0;
+  font-size:18px;
+}
+
+/* FOOTER */
+footer{
+  background:#020617;
+  color:#94a3b8;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+
+/* ANIMATIONS */
+.card,
+.section h2,
+.section p,
+.about{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h2{font-size:30px;}
+  header{flex-direction:column;}
+  nav{margin-top:10px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Ecommy</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>We Help Your Business Grow Online</h2>
+  <p>Amazon | Flipkart | Website | Digital Marketing</p>
+  <a class="btn" href="https://wa.me/919343153987" target="_blank">WhatsApp Us</a>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Amazon Seller Account Management</h3>
+      <p>Complete account handling & growth strategy.</p>
+    </div>
+    <div class="card">
+      <h3>Product Listing & SEO</h3>
+      <p>Optimized listings to boost sales.</p>
+    </div>
+    <div class="card">
+      <h3>Amazon & Flipkart Ads</h3>
+      <p>High ROI advertising campaigns.</p>
+    </div>
+    <div class="card">
+      <h3>Account Health Support</h3>
+      <p>Policy, suspension & compliance help.</p>
+    </div>
+    <div class="card">
+      <h3>Website Development</h3>
+      <p>Modern & fast business websites.</p>
+    </div>
+    <div class="card">
+      <h3>Digital Marketing</h3>
+      <p>SEO, Social Media & Lead Generation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <div class="about">
+    <p>
+      <b>Ecommy Business Solution</b> is a professional ecommerce & IT service company.
+      We help brands grow online with proven strategies and expert support.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p><b>Phone / WhatsApp:</b> 9343153987</p>
+  <p><b>Email:</b> ecommybussiness@gmail.com</p>
+</section>
+
+<footer>
+  © 2026 Ecommy Business Solution. All Rights Reserved.
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".card, .section h2, .section p, .about")
+.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
