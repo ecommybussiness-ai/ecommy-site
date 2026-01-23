@@ -2,85 +2,94 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: #f5f7fa;
+  background: #f4f6f8;
   color: #333;
-  line-height: 1.6;
 }
 
-/* HEADER */
-.header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #fff;
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 15px 0;
+}
+
+header h1 {
+  display: inline-block;
+}
+
+nav {
+  float: right;
+  margin-top: 5px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.hero {
+  background: white;
+  padding: 60px 0;
   text-align: center;
-  padding: 60px 20px;
 }
 
-.header h1 {
-  font-size: 36px;
+.hero h2 {
+  color: #0d6efd;
   margin-bottom: 10px;
 }
 
-.header p {
-  font-size: 18px;
+.hero p {
   margin-bottom: 20px;
 }
 
 .btn {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 12px 25px;
+  background: #0d6efd;
+  color: white;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
 }
 
-/* SECTIONS */
-.section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+.box {
+  background: white;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 8px;
 }
 
-.section h2 {
+.box h2 {
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.box ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.box li {
+  margin-bottom: 8px;
+}
+
+.light {
+  background: #eef3ff;
+}
+
+footer {
+  background: #0d6efd;
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
-  color: #1e3c72;
-}
-
-.section p {
-  text-align: center;
-  font-size: 16px;
-}
-
-/* SERVICES */
-.bg {
-  background: #fff;
-}
-
-.services {
-  list-style: none;
-  max-width: 500px;
-  margin: auto;
-}
-
-.services li {
-  background: #eef2f7;
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-/* FOOTER */
-.footer {
-  background: #1e3c72;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+  padding: 15px 0;
+  margin-top: 40px;
 }
