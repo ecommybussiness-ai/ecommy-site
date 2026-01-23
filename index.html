@@ -1,110 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ecommy Business Solution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecommy Business Solution</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#222;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#0a2540,#133b5c);
+  padding:15px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+header img{
+  height:48px;
+}
+
+nav a{
+  color:#fff;
+  margin-left:25px;
+  text-decoration:none;
+  font-size:15px;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:90px 60px;
+  background:#f8fbff;
+}
+
+.hero-left{
+  max-width:55%;
+}
+
+.hero-left h1{
+  font-size:44px;
+  color:#0a2540;
+  line-height:1.3;
+}
+
+.hero-left p{
+  margin-top:15px;
+  font-size:17px;
+  color:#444;
+}
+
+.hero-buttons{
+  margin-top:30px;
+}
+
+.hero-buttons a{
+  display:inline-block;
+  padding:14px 28px;
+  margin-right:15px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:15px;
+}
+
+.btn-primary{
+  background:#1a73e8;
+  color:#fff;
+}
+
+.btn-outline{
+  border:1px solid #1a73e8;
+  color:#1a73e8;
+}
+
+/* HERO RIGHT */
+.hero-right img{
+  width:280px;
+  opacity:0.95;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:space-around;
+  padding:50px 60px;
+  background:#ffffff;
+}
+
+.stat{
+  text-align:center;
+}
+
+.stat h2{
+  color:#1a73e8;
+  font-size:32px;
+}
+
+.stat p{
+  margin-top:5px;
+  font-size:14px;
+  color:#555;
+}
+
+/* SERVICES */
+.services{
+  padding:80px 60px;
+  background:#f8fbff;
+}
+
+.services h2{
+  text-align:center;
+  color:#0a2540;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.service-list{
+  max-width:900px;
+  margin:auto;
+}
+
+.service-list p{
+  font-size:16px;
+  padding:10px 0;
+  border-bottom:1px solid #e5eaf1;
+}
+
+/* CONTACT */
+.contact{
+  padding:70px 60px;
+  background:#ffffff;
+}
+
+.contact h2{
+  color:#0a2540;
+  margin-bottom:20px;
+}
+
+.contact p{
+  margin-bottom:10px;
+  font-size:15px;
+}
+
+/* FOOTER */
+footer{
+  background:#0a2540;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 20px;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-left{
+    max-width:100%;
+  }
+  .hero-right{
+    margin-top:40px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header-flex">
-    <img src="logo.png" class="logo" alt="Ecommy Business Solution">
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+<header>
+  <img src="logo.png" alt="Ecommy Logo">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="container hero-flex">
-    <div class="hero-text">
-      <h1>Grow Your E-Commerce Business<br>With Experts</h1>
-      <p>
-        Amazon Seller Support, Listings, Ads, Account Management & Websites  
-      </p>
-      <a href="#contact" class="btn">Get Free Consultation</a>
-    </div>
+  <div class="hero-left">
+    <h1>We Help Your Business Grow Online</h1>
+    <p>Amazon • Flipkart • Website • Ads • Account Management</p>
 
-    <div class="hero-image">
-      <!-- empty OR future image -->
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Get Free Consultation</a>
+      <a href="https://wa.me/919343153987" class="btn-outline">WhatsApp Us</a>
     </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="logo.png" alt="Brand">
   </div>
 </section>
 
-<!-- STATS -->
 <section class="stats">
-  <div class="container stats-flex">
-    <div>
-      <h2>2+</h2>
-      <p>Years Experience</p>
-    </div>
-    <div>
-      <h2>97%</h2>
-      <p>Satisfaction Rate</p>
-    </div>
-    <div>
-      <h2>100+</h2>
-      <p>Projects Completed</p>
-    </div>
+  <div class="stat">
+    <h2>2+</h2>
+    <p>Years Experience</p>
+  </div>
+  <div class="stat">
+    <h2>97%</h2>
+    <p>Satisfaction Rate</p>
+  </div>
+  <div class="stat">
+    <h2>100+</h2>
+    <p>Projects Completed</p>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="services">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="service-line">
-      <div><i class="fa-brands fa-amazon"></i> Amazon Seller Support</div>
-      <div><i class="fa-solid fa-pen"></i> Listing Optimization</div>
-      <div><i class="fa-solid fa-bullhorn"></i> Amazon Ads</div>
-      <div><i class="fa-solid fa-user-gear"></i> Account Management</div>
-      <div><i class="fa-solid fa-globe"></i> Website Development</div>
-    </div>
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <p>✔ Amazon Seller Account Management</p>
+    <p>✔ Product Listing & SEO Optimization</p>
+    <p>✔ Amazon & Flipkart Ads Management</p>
+    <p>✔ Account Health & Policy Support</p>
+    <p>✔ Website Development</p>
+    <p>✔ Digital Marketing</p>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-  <div class="container">
-    <h2 class="section-title">Why Choose Ecommy?</h2>
-    <p>
-      We help sellers grow profitably on Amazon & other platforms with proven
-      strategies, transparent work and dedicated support.
-    </p>
-  </div>
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Phone / WhatsApp:</strong> 9343153987</p>
+  <p><strong>Email:</strong> ecommybusiness@gmail.com</p>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2 class="section-title">Contact Us</h2>
-
-    <p><strong>Phone / WhatsApp:</strong> 9343153987</p>
-    <p><strong>Email:</strong> ecommybussiness@gmail.com</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2026 Ecommy Business Solution. All Rights Reserved.</p>
+<footer>
+  © 2026 Ecommy Business Solution. All Rights Reserved.
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/919343153987" class="whatsapp" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<a class="whatsapp" href="https://wa.me/919343153987">WhatsApp Us</a>
 
 </body>
 </html>
