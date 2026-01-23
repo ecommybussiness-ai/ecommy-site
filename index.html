@@ -1,333 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ecommy Business Solution</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Ecommy Business Solution</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" href="favicon.ico">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-body{
-  background:#ffffff;
-  color:#111827;
-  line-height:1.7;
-}
+    body {
+      background: #f5f9ff;
+      color: #1f2937;
+    }
 
-/* ===== HEADER ===== */
-header{
-  background:#0f172a;
-  padding:18px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    header {
+      background: white;
+      padding: 18px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-header img{
-  height:52px;
-}
+    header img {
+      height: 48px;
+    }
 
-nav a{
-  color:#ffffff;
-  text-decoration:none;
-  margin-left:32px;
-  font-weight:600;
-  font-size:15px;
-}
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: 500;
+    }
 
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(180deg,#0f172a,#020617);
-  color:#ffffff;
-  padding:110px 7%;
-  display:flex;
-  gap:50px;
-  align-items:center;
-}
+    .hero {
+      padding: 90px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #e8f1ff, #ffffff);
+    }
 
-.hero-left{
-  width:55%;
-}
+    .hero-text {
+      max-width: 600px;
+    }
 
-.hero-left h1{
-  font-size:52px;
-  font-weight:800;
-  margin-bottom:20px;
-}
+    .hero-text h1 {
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
 
-.hero-left p{
-  font-size:19px;
-  color:#cbd5f5;
-  margin-bottom:30px;
-}
+    .hero-text h1 span {
+      color: #2563eb;
+    }
 
-.hero-left button{
-  padding:15px 36px;
-  background:#2563eb;
-  border:none;
-  border-radius:4px;
-  color:#ffffff;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-}
+    .hero-text p {
+      margin: 25px 0;
+      font-size: 17px;
+      color: #4b5563;
+    }
 
-.hero-right{
-  width:45%;
-  background:#ffffff;
-  color:#111827;
-  padding:40px;
-  border-radius:8px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.4);
-}
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
 
-.hero-right h3{
-  font-size:22px;
-  margin-bottom:18px;
-}
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 60px 40px;
+      background: white;
+    }
 
-.hero-right li{
-  list-style:none;
-  padding:10px 0;
-  border-bottom:1px solid #e5e7eb;
-  font-weight:500;
-}
+    .stat-box {
+      text-align: center;
+    }
 
-/* ===== STATS ===== */
-.stats{
-  background:#020617;
-  color:#ffffff;
-  padding:70px 7%;
-  display:flex;
-  justify-content:space-between;
-  text-align:center;
-}
+    .stat-box h2 {
+      color: #2563eb;
+      font-size: 38px;
+    }
 
-.stat h2{
-  font-size:44px;
-  font-weight:800;
-  color:#38bdf8;
-}
+    .stat-box p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
 
-.stat p{
-  font-size:15px;
-  letter-spacing:0.5px;
-}
+    .services {
+      padding: 90px 80px;
+    }
 
-/* ===== SERVICES ===== */
-.services{
-  padding:100px 7%;
-  background:#ffffff;
-}
+    .services h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
 
-.services h2{
-  font-size:40px;
-  font-weight:800;
-  margin-bottom:55px;
-  text-align:center;
-}
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:35px;
-}
+    .service-box {
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
 
-.service-box{
-  border:1px solid #e5e7eb;
-  padding:35px;
-  background:#ffffff;
-}
+    .service-box:hover {
+      transform: translateY(-8px);
+    }
 
-.service-box h3{
-  font-size:20px;
-  margin-bottom:12px;
-}
+    .service-box h3 {
+      margin-bottom: 12px;
+    }
 
-.service-box p{
-  color:#374151;
-}
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 40px;
+      text-align: center;
+      margin-top: 80px;
+    }
 
-/* ===== WHY US ===== */
-.why{
-  background:#f1f5f9;
-  padding:100px 7%;
-}
+    /* WhatsApp Floating Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
 
-.why h2{
-  font-size:38px;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:45px;
-}
+    @media(max-width: 768px) {
+      header {
+        padding: 15px 30px;
+      }
 
-.why-item{
-  max-width:900px;
-  margin:14px auto;
-  padding:18px;
-  background:#ffffff;
-  border-left:5px solid #2563eb;
-  font-size:18px;
-}
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 30px;
+      }
 
-/* ===== CTA ===== */
-.cta{
-  background:#0f172a;
-  color:#ffffff;
-  padding:90px 7%;
-  text-align:center;
-}
-
-.cta h2{
-  font-size:42px;
-  font-weight:800;
-  margin-bottom:18px;
-}
-
-.cta p{
-  font-size:18px;
-  color:#cbd5f5;
-  margin-bottom:28px;
-}
-
-.cta button{
-  padding:15px 40px;
-  background:#38bdf8;
-  border:none;
-  color:#020617;
-  font-weight:700;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  background:#020617;
-  color:#94a3b8;
-  padding:30px;
-  text-align:center;
-  font-size:14px;
-}
-
-/* ===== WHATSAPP ===== */
-.whatsapp{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  background:#25d366;
-  color:#ffffff;
-  padding:16px 19px;
-  border-radius:50%;
-  font-size:26px;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-</style>
+      .hero-text h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" alt="Ecommy Business Solution">
+  <img src="logo.png" alt="Ecommy Logo">
   <nav>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-left">
-    <h1>E-Commerce & Digital Growth Consulting</h1>
-    <p>
-      We are a professional agency helping brands scale on Amazon, Flipkart
-      and digital platforms with structured strategies and expert execution.
-    </p>
-    <button onclick="window.location.href='https://wa.me/919343153987'">
-      Request Consultation
-    </button>
-  </div>
-
-  <div class="hero-right">
-    <h3>Core Capabilities</h3>
-    <ul>
-      <li>Amazon Seller Account Management</li>
-      <li>Listing & SEO Optimization</li>
-      <li>Amazon & Flipkart Ads Management</li>
-      <li>Account Health & Policy Support</li>
-      <li>Website & Business Consulting</li>
-    </ul>
+  <div class="hero-text">
+    <h1>Grow Your Business with <span>Ecommy Business Solution</span></h1>
+    <p>Amazon • Flipkart • Website Development • Ads • Complete Account Management</p>
+    <a href="https://wa.me/919343153987" class="btn">Get Free Consultation</a>
   </div>
 </section>
 
 <section class="stats">
-  <div class="stat">
+  <div class="stat-box">
     <h2>2+</h2>
-    <p>YEARS EXPERIENCE</p>
+    <p>Years Experience</p>
   </div>
-  <div class="stat">
+  <div class="stat-box">
     <h2>97%</h2>
-    <p>CLIENT SATISFACTION</p>
+    <p>Satisfaction Rate</p>
   </div>
-  <div class="stat">
+  <div class="stat-box">
     <h2>100+</h2>
-    <p>PROJECTS DELIVERED</p>
+    <p>Projects Completed</p>
   </div>
 </section>
 
-<section class="services" id="services">
-  <h2>Professional Services</h2>
+<section class="services">
+  <h2>Our Services</h2>
   <div class="service-grid">
     <div class="service-box">
-      <h3>Amazon Seller Consulting</h3>
-      <p>End-to-end account management focused on sustainable growth.</p>
+      <h3>Amazon Seller Support</h3>
+      <p>Account setup, suspension handling, growth strategy.</p>
     </div>
     <div class="service-box">
-      <h3>Listing Optimization</h3>
-      <p>Conversion-focused listings backed by keyword research.</p>
+      <h3>Product Listing</h3>
+      <p>SEO optimized listings with high conversion.</p>
     </div>
     <div class="service-box">
-      <h3>Ads & PPC Management</h3>
-      <p>Data-driven advertising strategies to maximize ROI.</p>
-    </div>
-    <div class="service-box">
-      <h3>Account Health Support</h3>
-      <p>Policy compliance, issue resolution and risk mitigation.</p>
+      <h3>Ads Management</h3>
+      <p>PPC campaigns with ROI focused strategy.</p>
     </div>
     <div class="service-box">
       <h3>Website Development</h3>
-      <p>Corporate websites aligned with brand authority.</p>
+      <p>Professional business & ecommerce websites.</p>
     </div>
   </div>
 </section>
 
-<section class="why">
-  <h2>Why Ecommy Business Solution</h2>
-  <div class="why-item">✔ Structured & professional working process</div>
-  <div class="why-item">✔ Dedicated account managers</div>
-  <div class="why-item">✔ Transparent reporting & communication</div>
-  <div class="why-item">✔ Long-term business growth mindset</div>
-</section>
-
-<section class="cta" id="contact">
-  <h2>Speak With Our Experts</h2>
-  <p>📞 9343153987 &nbsp; | &nbsp; 📧 ecommybussiness@gmail.com</p>
-  <button onclick="window.location.href='https://wa.me/919343153987'">
-    WhatsApp Now
-  </button>
-</section>
-
 <footer>
-  © 2026 Ecommy Business Solution. All Rights Reserved.
+  <p>© 2026 Ecommy Business Solution | ecommybussiness@gmail.com | 9343153987</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919343153987">💬</a>
+<a href="https://wa.me/919343153987" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
