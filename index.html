@@ -1,221 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ecommy Business Solution</title>
+  <meta charset="UTF-8" />
+  <title>Ecommy Business Solution | Amazon & Digital Growth Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" href="logo.png.png">
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" />
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-body{
-    background:#f5f7fa;
-    color:#222;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-/* HEADER */
-header{
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    padding:15px 40px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    position:sticky;
-    top:0;
-    z-index:100;
-}
+    body {
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
 
-header img{
-    height:45px;
-    background:#fff;
-    padding:6px;
-    border-radius:8px;
-}
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 15px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
 
-header h1{
-    color:#fff;
-    font-size:22px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-/* HERO */
-.hero{
-    padding:80px 40px;
-    background:#fff;
-    text-align:center;
-}
+    .logo img {
+      height: 45px;
+      width: 45px;
+      object-fit: contain;
+      background: #fff;
+      padding: 5px;
+      border-radius: 8px;
+    }
 
-.hero h2{
-    font-size:36px;
-    margin-bottom:15px;
-    color:#0f2027;
-}
+    .logo h1 {
+      font-size: 22px;
+      font-weight: 600;
+    }
 
-.hero p{
-    font-size:18px;
-    color:#555;
-    margin-bottom:30px;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
 
-.hero a{
-    display:inline-block;
-    background:#25D366;
-    color:#fff;
-    padding:14px 28px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-.hero a:hover{
-    background:#1ebe5d;
-}
+    /* HERO */
+    .hero {
+      padding: 80px 60px;
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
 
-/* SERVICES */
-.services{
-    padding:60px 40px;
-}
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #0f2027;
+    }
 
-.services h2{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:40px;
-    color:#0f2027;
-}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #444;
+    }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
+    .hero button {
+      padding: 14px 28px;
+      font-size: 16px;
+      background: #25d366;
+      border: none;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+    }
 
-.card{
-    background:#fff;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
+    .hero button:hover {
+      background: #1ebc59;
+    }
 
-.card:hover{
-    transform:translateY(-6px);
-}
+    .hero img {
+      width: 100%;
+      border-radius: 20px;
+    }
 
-.card h3{
-    margin-bottom:10px;
-    color:#203a43;
-}
+    /* STATS */
+    .stats {
+      background: #0f2027;
+      color: #fff;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 30px;
+    }
 
-.card p{
-    color:#555;
-    font-size:15px;
-}
+    .stat h3 {
+      font-size: 38px;
+      margin-bottom: 5px;
+      color: #25d366;
+    }
 
-/* CONTACT */
-.contact{
-    background:#fff;
-    padding:60px 40px;
-    text-align:center;
-}
+    .stat p {
+      font-size: 16px;
+    }
 
-.contact h2{
-    font-size:30px;
-    margin-bottom:20px;
-    color:#0f2027;
-}
+    /* SERVICES */
+    .services {
+      padding: 80px 60px;
+      background: #f5f7fa;
+    }
 
-.contact p{
-    font-size:17px;
-    margin-bottom:10px;
-}
+    .services h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
 
-/* FOOTER */
-footer{
-    background:#0f2027;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-    font-size:14px;
-}
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-/* FLOATING WHATSAPP */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:#fff;
-    padding:15px 20px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
-</style>
+    .service-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-box h4 {
+      margin-bottom: 10px;
+      color: #0f2027;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 80px 60px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f2027;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp-float:hover {
+      background: #1ebc59;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-    <img src="logo.png.png" alt="Ecommy Logo">
-    <h1>Ecommy Business Solution</h1>
+  <div class="logo">
+    <img src="logo.png" alt="Ecommy Logo">
+    <h1>Ecommy</h1>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
+  <div>
     <h2>We Help Your Business Grow Online</h2>
     <p>Amazon | Flipkart | Website | Digital Marketing</p>
-    <a href="https://wa.me/919343153987" target="_blank">Chat on WhatsApp</a>
+    <button onclick="window.location.href='https://wa.me/919343153987'">WhatsApp Us</button>
+  </div>
+  <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Business Growth">
 </section>
 
-<section class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-        <div class="card">
-            <h3>Amazon Account Management</h3>
-            <p>Complete seller account handling with growth-focused strategy.</p>
-        </div>
-        <div class="card">
-            <h3>Listing & SEO Optimization</h3>
-            <p>Keyword-rich listings to increase visibility and conversions.</p>
-        </div>
-        <div class="card">
-            <h3>Amazon & Flipkart Ads</h3>
-            <p>ROI-driven ad campaigns to boost sales fast.</p>
-        </div>
-        <div class="card">
-            <h3>Account Health & Policy</h3>
-            <p>Suspension prevention & policy issue resolution.</p>
-        </div>
-        <div class="card">
-            <h3>Website Development</h3>
-            <p>Fast, mobile-friendly and conversion-focused websites.</p>
-        </div>
-        <div class="card">
-            <h3>Digital Marketing</h3>
-            <p>Social media, Google Ads & brand growth solutions.</p>
-        </div>
+<section class="stats">
+  <div class="stat">
+    <h3>2+</h3>
+    <p>Years Experience</p>
+  </div>
+  <div class="stat">
+    <h3>97%</h3>
+    <p>Satisfaction Rate</p>
+  </div>
+  <div class="stat">
+    <h3>100+</h3>
+    <p>Projects Completed</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div class="service-grid">
+    <div class="service-box">
+      <h4>Amazon Seller Account Management</h4>
+      <p>Complete handling of your seller account with growth strategy.</p>
     </div>
+    <div class="service-box">
+      <h4>Product Listing & SEO</h4>
+      <p>High-converting listings with keyword optimization.</p>
+    </div>
+    <div class="service-box">
+      <h4>Amazon & Flipkart Ads</h4>
+      <p>ROI-focused PPC & ad campaign management.</p>
+    </div>
+    <div class="service-box">
+      <h4>Account Health & Policy</h4>
+      <p>Suspension prevention & reinstatement support.</p>
+    </div>
+    <div class="service-box">
+      <h4>Website Development</h4>
+      <p>Fast, modern & mobile-friendly business websites.</p>
+    </div>
+    <div class="service-box">
+      <h4>Digital Marketing</h4>
+      <p>Social media, leads & brand visibility growth.</p>
+    </div>
+  </div>
 </section>
 
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Phone / WhatsApp:</strong> 9343153987</p>
-    <p><strong>Email:</strong> ecommybussiness@gmail.com</p>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Phone / WhatsApp:</strong> 9343153987</p>
+  <p><strong>Email:</strong> ecommybussiness@gmail.com</p>
 </section>
 
 <footer>
-    © 2026 Ecommy Business Solution. All Rights Reserved.
+  © 2026 Ecommy Business Solution. All Rights Reserved.
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919343153987" target="_blank">
-    WhatsApp Us
+<a class="whatsapp-float" href="https://wa.me/919343153987" target="_blank">
+  WhatsApp Us
 </a>
 
 </body>
