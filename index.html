@@ -4,123 +4,14 @@
 <meta charset="UTF-8">
 <title>Ecommy Business Solution</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0b1a2a;color:#fff;line-height:1.6}
-
-/* HEADER */
-header{
-background:#081321;
-padding:16px 60px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-header img{height:40px}
-nav a{
-color:#cfd8e3;
-margin-left:30px;
-text-decoration:none;
-font-weight:500;
-}
-nav a:hover{color:#4fc3ff}
-
-/* HERO */
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:90px 60px;
-}
-.hero-text{max-width:55%}
-.hero-text h1{
-font-size:44px;
-font-weight:700;
-margin-bottom:15px;
-}
-.hero-text h1 span{color:#4fc3ff}
-.hero-text p{color:#b8c6d9;font-size:18px;margin-bottom:30px}
-.hero-text .btn{
-display:inline-block;
-background:#25D366;
-color:#fff;
-padding:14px 26px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-
-.hero-brand{
-text-align:right;
-opacity:0.9;
-}
-.hero-brand img{
-width:220px;
-}
-
-/* STATS */
-.stats{
-display:flex;
-justify-content:space-around;
-padding:60px;
-background:#07101d;
-}
-.stat{text-align:center}
-.stat h2{color:#4fc3ff;font-size:36px}
-.stat p{color:#cdd6e1}
-
-/* SERVICES */
-.services{
-padding:80px 60px;
-background:#0b1a2a;
-}
-.services h2{
-text-align:center;
-font-size:32px;
-margin-bottom:40px;
-}
-.service-list{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-.service{
-border-left:3px solid #4fc3ff;
-padding-left:18px;
-color:#cfd8e3;
-}
-
-/* FOOTER */
-footer{
-background:#07101d;
-padding:30px;
-text-align:center;
-color:#9fb0c4;
-font-size:14px;
-}
-
-/* FLOATING WHATSAPP */
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:#fff;
-padding:14px 22px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="Ecommy Logo">
+<header class="header">
+  <div class="brand">Ecommy</div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Services</a>
@@ -130,49 +21,38 @@ font-weight:600;
 </header>
 
 <section class="hero">
-  <div class="hero-text">
-    <h1>We Help Your <span>Business Grow</span> Online</h1>
-    <p>Amazon • Flipkart • Website Development • Ads • Account Management</p>
-    <a class="btn" href="https://wa.me/919343153987">WhatsApp Us</a>
+  <div class="hero-left">
+    <h1>
+      Empowering Your <br>
+      <span>Business Growth</span> Online
+    </h1>
+
+    <p>
+      Amazon Seller Support, Flipkart Account Management,
+      Website Development & Digital Marketing Solutions.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary">Our Services</a>
+      <a class="btn secondary">Contact Us</a>
+    </div>
   </div>
 
-  <div class="hero-brand">
-    <img src="logo.png" alt="Brand">
+  <div class="hero-right">
+    <div class="abstract-card">
+      <h3>2+ Years</h3>
+      <p>Experience</p>
+    </div>
+    <div class="abstract-card">
+      <h3>97%</h3>
+      <p>Satisfaction</p>
+    </div>
+    <div class="abstract-card">
+      <h3>100+</h3>
+      <p>Projects</p>
+    </div>
   </div>
 </section>
-
-<section class="stats">
-  <div class="stat">
-    <h2>2+</h2>
-    <p>Years Experience</p>
-  </div>
-  <div class="stat">
-    <h2>97%</h2>
-    <p>Satisfaction Rate</p>
-  </div>
-  <div class="stat">
-    <h2>100+</h2>
-    <p>Projects Completed</p>
-  </div>
-</section>
-
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="service-list">
-    <div class="service">Amazon Seller Account Management</div>
-    <div class="service">Product Listing & SEO Optimization</div>
-    <div class="service">Amazon & Flipkart Ads Management</div>
-    <div class="service">Account Health & Policy Support</div>
-    <div class="service">Website Development</div>
-    <div class="service">Digital Marketing</div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Ecommy Business Solution. All Rights Reserved.
-</footer>
-
-<a class="whatsapp" href="https://wa.me/919343153987">WhatsApp</a>
 
 </body>
 </html>
