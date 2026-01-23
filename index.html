@@ -18,18 +18,18 @@
 }
 
 body{
-  background:#0b0f1a;
-  color:#fff;
-  line-height:1.6;
+  background:#f5f9ff;
+  color:#1f2937;
 }
 
 /* HEADER */
 header{
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  padding:25px 10%;
+  background:#ffffff;
+  padding:20px 10%;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
 }
 
 header img{
@@ -37,36 +37,37 @@ header img{
 }
 
 nav a{
-  color:#fff;
+  color:#1f2937;
   text-decoration:none;
   margin-left:25px;
-  font-weight:500;
+  font-weight:600;
 }
 
 /* HERO */
 .hero{
   padding:90px 10%;
+  background:linear-gradient(135deg,#eaf3ff,#ffffff);
   text-align:center;
 }
 
 .hero h1{
-  font-size:42px;
+  font-size:44px;
   margin-bottom:15px;
 }
 
 .hero p{
   font-size:18px;
-  color:#cfd8dc;
+  color:#4b5563;
 }
 
 .hero button{
   margin-top:30px;
-  padding:14px 35px;
+  padding:14px 38px;
   font-size:16px;
   border:none;
   border-radius:30px;
-  background:#25d366;
-  color:#000;
+  background:#2563eb;
+  color:#fff;
   cursor:pointer;
 }
 
@@ -75,66 +76,75 @@ nav a{
   display:flex;
   justify-content:space-around;
   padding:60px 10%;
-  background:#11162a;
+  background:#ffffff;
   text-align:center;
+}
+
+.stat{
+  background:#f0f6ff;
+  padding:30px;
+  border-radius:18px;
+  width:30%;
 }
 
 .stat h2{
   font-size:36px;
-  color:#25d366;
+  color:#2563eb;
 }
 
 .stat p{
-  color:#bbb;
+  color:#374151;
 }
 
-/* SERVICES LOGOS */
+/* SERVICES */
 .services{
   padding:80px 10%;
   text-align:center;
 }
 
 .services h2{
-  font-size:34px;
+  font-size:36px;
   margin-bottom:40px;
 }
 
 .logo-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:30px;
 }
 
 .logo-grid img{
-  background:#fff;
-  padding:20px;
-  border-radius:16px;
-  height:90px;
+  background:#ffffff;
+  padding:22px;
+  border-radius:18px;
+  height:95px;
   object-fit:contain;
+  box-shadow:0 6px 16px rgba(0,0,0,0.08);
 }
 
 /* CONTACT */
 .contact{
   padding:80px 10%;
-  background:#11162a;
+  background:#eaf3ff;
   text-align:center;
 }
 
 .contact h2{
-  font-size:32px;
+  font-size:34px;
   margin-bottom:20px;
 }
 
 .contact p{
-  color:#ccc;
+  color:#374151;
+  font-size:18px;
 }
 
 /* FOOTER */
 footer{
   padding:25px;
   text-align:center;
-  background:#0b0f1a;
-  color:#777;
+  background:#ffffff;
+  color:#6b7280;
 }
 
 /* WHATSAPP */
@@ -143,11 +153,12 @@ footer{
   bottom:20px;
   right:20px;
   background:#25d366;
-  color:#000;
+  color:#fff;
   padding:15px 18px;
   border-radius:50%;
   font-size:26px;
   text-decoration:none;
+  box-shadow:0 6px 16px rgba(0,0,0,0.25);
 }
 </style>
 </head>
