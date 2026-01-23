@@ -1,183 +1,57 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{color:#0b1c33;background:#fff}
 
-body {
-  background: #ffffff;
-  color: #0a2540;
-  line-height: 1.6;
-}
+.container{width:90%;max-width:1200px;margin:auto}
 
-/* COMMON */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #0a2540;
-}
-
-/* HEADER */
-.header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand img {
-  height: 40px;
-}
-
-.brand span {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #0a2540;
-  font-weight: 500;
-}
+/* NAV */
+.navbar{background:#fff;border-bottom:1px solid #eee}
+.nav-flex{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo img{height:36px}
+nav a{margin-left:25px;text-decoration:none;color:#0b1c33;font-weight:500}
 
 /* HERO */
-.hero {
-  padding: 80px 0;
-  background: #f7fbff;
-}
+.hero{background:#f6fbff;padding:80px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:44px;line-height:1.2}
+.hero h1 span{color:#2b5cff}
+.hero p{margin:20px 0;color:#555}
+.hero-img img{width:100%;border-radius:10px}
+.hero-btns{display:flex;gap:15px}
+.btn{padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600}
+.primary{background:#2b5cff;color:#fff}
+.outline{border:2px solid #2b5cff;color:#2b5cff}
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 40px;
-}
+/* PLATFORMS */
+.platforms{padding:30px 0;text-align:center;border-bottom:1px solid #eee}
+.platforms span{margin:0 15px;color:#888;font-weight:600}
 
-.hero h1 {
-  font-size: 52px;
-  line-height: 1.2;
-}
-
-.hero h1 span {
-  color: #2563eb;
-}
-
-.hero p {
-  margin: 20px 0;
-  font-size: 18px;
-  color: #475569;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  padding: 14px 26px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.primary {
-  background: #2563eb;
-  color: #fff;
-}
-
-.outline {
-  border: 2px solid #2563eb;
-  color: #2563eb;
-}
-
-/* HERO IMAGE */
-.hero-image img {
-  width: 100%;
-  border-radius: 16px;
-}
-
-/* STATS */
-.stats {
-  background: #ffffff;
-  padding: 60px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.stat-box {
-  background: #f1f7ff;
-  padding: 30px;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.stat-box h3 {
-  font-size: 36px;
-  color: #2563eb;
-}
+/* WHY */
+.why-us{padding:70px 0}
+.why-us h2{text-align:center;margin-bottom:30px}
+.why-us span{color:#2b5cff}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;font-size:17px}
 
 /* SERVICES */
-.services {
-  padding: 80px 0;
-  background: #ffffff;
-}
+.services{background:#f9fbff;padding:70px 0}
+.services h2{text-align:center;margin-bottom:30px}
+.services ul{columns:2;list-style:none}
+.services li{margin-bottom:15px}
 
-.service-list li {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-/* ABOUT */
-.about {
-  background: #f7fbff;
-  padding: 80px 0;
-}
+/* PROCESS */
+.process{padding:70px 0}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
 
 /* CONTACT */
-.contact {
-  padding: 80px 0;
-}
+.contact{background:#f6fbff;padding:60px 0;text-align:center}
 
 /* FOOTER */
-.footer {
-  background: #0a2540;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
+footer{text-align:center;padding:20px;font-size:14px;color:#777}
 
 /* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
+.whatsapp{
+ position:fixed;right:20px;bottom:20px;
+ background:#25d366;color:#fff;
+ padding:12px 18px;border-radius:30px;
+ text-decoration:none;font-weight:600
 }
