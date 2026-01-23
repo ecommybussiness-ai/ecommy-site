@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Ecommy Business Solution</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Amazon, Flipkart & Digital Growth Partner">
 
 <link rel="icon" href="favicon.ico">
 
@@ -14,7 +12,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body{
@@ -23,14 +21,14 @@ body{
   line-height:1.6;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   background:#ffffff;
-  padding:18px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
   border-bottom:1px solid #e5e7eb;
+  padding:16px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 header img{
@@ -38,97 +36,102 @@ header img{
 }
 
 nav a{
-  margin-left:30px;
+  margin-left:28px;
   text-decoration:none;
   color:#1f2937;
   font-weight:600;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
+  padding:90px 7%;
+  background:linear-gradient(180deg,#f2f7ff,#ffffff);
   display:flex;
+  gap:40px;
   align-items:center;
-  justify-content:space-between;
-  padding:90px 8%;
-  background:#f3f8ff;
 }
 
-.hero-text{
+.hero-left{
   width:55%;
 }
 
-.hero-text h1{
-  font-size:46px;
-  margin-bottom:15px;
+.hero-left h1{
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:20px;
 }
 
-.hero-text p{
+.hero-left p{
   font-size:18px;
   color:#4b5563;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 
-.hero-text button{
-  padding:14px 32px;
-  background:#1d4ed8;
-  color:#fff;
+.hero-left button{
+  padding:14px 34px;
+  font-size:16px;
   border:none;
   border-radius:6px;
-  font-size:16px;
+  background:#1d4ed8;
+  color:#ffffff;
   cursor:pointer;
 }
 
-.hero-box{
-  width:40%;
+.hero-right{
+  width:45%;
   background:#ffffff;
-  padding:30px;
+  padding:35px;
   border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  border:1px solid #e5e7eb;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
 
-.hero-box h3{
+.hero-right h3{
   margin-bottom:15px;
+  font-size:22px;
 }
 
-.hero-box ul{
+.hero-right ul{
   list-style:none;
 }
 
-.hero-box li{
-  padding:8px 0;
+.hero-right li{
+  padding:10px 0;
   border-bottom:1px solid #e5e7eb;
 }
 
-/* STATS */
+/* ================= STATS ================= */
 .stats{
-  display:flex;
-  justify-content:space-around;
-  padding:60px 8%;
+  padding:60px 7%;
   background:#ffffff;
-}
-
-.stat{
+  display:flex;
+  justify-content:space-between;
   text-align:center;
 }
 
+.stat{
+  width:30%;
+}
+
 .stat h2{
-  font-size:40px;
+  font-size:42px;
   color:#1d4ed8;
 }
 
 .stat p{
   color:#374151;
+  font-weight:500;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 .services{
-  padding:80px 8%;
+  padding:90px 7%;
   background:#f9fafb;
 }
 
 .services h2{
   text-align:center;
-  font-size:36px;
+  font-size:38px;
   margin-bottom:50px;
 }
 
@@ -138,72 +141,85 @@ nav a{
   gap:30px;
 }
 
-.service-card{
+.service-box{
   background:#ffffff;
   padding:30px;
   border-radius:10px;
   border:1px solid #e5e7eb;
+  transition:0.3s;
 }
 
-.service-card h3{
+.service-box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.service-box h3{
   margin-bottom:10px;
+  font-size:20px;
 }
 
-/* WHY US */
+/* ================= WHY US ================= */
 .why{
-  padding:80px 8%;
+  padding:90px 7%;
   background:#ffffff;
 }
 
 .why h2{
   text-align:center;
-  font-size:36px;
+  font-size:38px;
   margin-bottom:40px;
 }
 
-.why ul{
-  max-width:800px;
+.why-list{
+  max-width:900px;
   margin:auto;
-  list-style:none;
 }
 
-.why li{
-  padding:12px 0;
+.why-item{
+  padding:14px 0;
   font-size:18px;
+  border-bottom:1px solid #e5e7eb;
 }
 
-/* CTA */
+/* ================= CTA ================= */
 .cta{
+  padding:80px 7%;
   background:#1d4ed8;
   color:#ffffff;
-  padding:70px 8%;
   text-align:center;
 }
 
 .cta h2{
-  font-size:36px;
+  font-size:40px;
   margin-bottom:15px;
 }
 
+.cta p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
 .cta button{
-  padding:14px 34px;
+  padding:14px 36px;
+  font-size:16px;
+  border:none;
+  border-radius:6px;
   background:#ffffff;
   color:#1d4ed8;
-  border:none;
-  font-size:16px;
-  border-radius:6px;
   cursor:pointer;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   background:#111827;
   color:#9ca3af;
-  padding:30px;
   text-align:center;
+  padding:30px;
+  font-size:14px;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -214,6 +230,7 @@ footer{
   border-radius:50%;
   font-size:26px;
   text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -229,22 +246,25 @@ footer{
 </header>
 
 <section class="hero">
-  <div class="hero-text">
-    <h1>Grow Your E-Commerce Business With Experts</h1>
-    <p>We help brands scale on Amazon, Flipkart & Digital platforms with proven strategies.</p>
+  <div class="hero-left">
+    <h1>Professional E-Commerce & Digital Growth Partner</h1>
+    <p>
+      We help sellers and brands grow on Amazon, Flipkart and online platforms
+      with expert strategies and dedicated support.
+    </p>
     <button onclick="window.location.href='https://wa.me/919343153987'">
       Get Free Consultation
     </button>
   </div>
 
-  <div class="hero-box">
-    <h3>Our Core Services</h3>
+  <div class="hero-right">
+    <h3>Our Expertise</h3>
     <ul>
       <li>Amazon Seller Account Management</li>
       <li>Listing & SEO Optimization</li>
-      <li>Amazon & Flipkart Ads</li>
+      <li>Amazon & Flipkart Ads Management</li>
       <li>Account Health & Suspension Support</li>
-      <li>Website Development</li>
+      <li>Website Development & Branding</li>
     </ul>
   </div>
 </section>
@@ -256,7 +276,7 @@ footer{
   </div>
   <div class="stat">
     <h2>97%</h2>
-    <p>Client Satisfaction</p>
+    <p>Satisfaction Rate</p>
   </div>
   <div class="stat">
     <h2>100+</h2>
@@ -267,39 +287,42 @@ footer{
 <section class="services" id="services">
   <h2>Our Services</h2>
   <div class="service-grid">
-    <div class="service-card">
+    <div class="service-box">
       <h3>Amazon Seller Support</h3>
-      <p>Complete account handling and performance improvement.</p>
+      <p>Complete account handling with growth-focused strategies.</p>
     </div>
-    <div class="service-card">
+    <div class="service-box">
       <h3>Listing Optimization</h3>
-      <p>SEO-friendly listings that improve ranking and sales.</p>
+      <p>SEO-friendly listings that improve ranking and conversions.</p>
     </div>
-    <div class="service-card">
+    <div class="service-box">
       <h3>Ads Management</h3>
-      <p>ROI-focused PPC campaigns for Amazon & Flipkart.</p>
+      <p>ROI-driven Amazon & Flipkart PPC campaigns.</p>
     </div>
-    <div class="service-card">
+    <div class="service-box">
+      <h3>Account Health Support</h3>
+      <p>Policy compliance, issue resolution & suspension handling.</p>
+    </div>
+    <div class="service-box">
       <h3>Website Development</h3>
-      <p>Professional websites for brands & sellers.</p>
+      <p>Professional business & e-commerce websites.</p>
     </div>
   </div>
 </section>
 
 <section class="why">
   <h2>Why Choose Ecommy Business Solution?</h2>
-  <ul>
-    <li>✔ Dedicated Account Manager</li>
-    <li>✔ Transparent Reporting</li>
-    <li>✔ Marketplace Experts</li>
-    <li>✔ Result-Driven Approach</li>
-  </ul>
+  <div class="why-list">
+    <div class="why-item">✔ Dedicated Account Manager</div>
+    <div class="why-item">✔ Transparent & Honest Reporting</div>
+    <div class="why-item">✔ Marketplace-Experienced Team</div>
+    <div class="why-item">✔ Long-Term Growth Approach</div>
+  </div>
 </section>
 
 <section class="cta" id="contact">
-  <h2>Let’s Grow Your Business Together</h2>
-  <p>📞 9343153987 | 📧 ecommybussiness@gmail.com</p>
-  <br>
+  <h2>Let’s Grow Your Business</h2>
+  <p>📞 9343153987 &nbsp; | &nbsp; 📧 ecommybussiness@gmail.com</p>
   <button onclick="window.location.href='https://wa.me/919343153987'">
     WhatsApp Now
   </button>
