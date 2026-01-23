@@ -6,84 +6,81 @@
 }
 
 body {
-  background-color: #f4f6f8;
+  background: #f5f7fa;
   color: #333;
-}
-
-/* Header */
-header {
-  background: #0d6efd;
-  padding: 20px;
-  text-align: center;
-}
-
-header h1 {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 12px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Sections */
-section {
-  background: #fff;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-section h2 {
-  color: #0d6efd;
-  margin-bottom: 15px;
-}
-
-section p {
-  font-size: 16px;
   line-height: 1.6;
 }
 
-/* Services list */
-ul {
-  margin-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-/* WhatsApp Button */
-.whatsapp {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #25d366;
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 25px;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: bold;
 }
 
-.whatsapp:hover {
-  background: #1ebe5d;
+/* SECTIONS */
+.section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* Footer */
-footer {
-  background: #0d6efd;
+.section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3c72;
+}
+
+.section p {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* SERVICES */
+.bg {
+  background: #fff;
+}
+
+.services {
+  list-style: none;
+  max-width: 500px;
+  margin: auto;
+}
+
+.services li {
+  background: #eef2f7;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  background: #1e3c72;
   color: #fff;
   text-align: center;
   padding: 15px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
