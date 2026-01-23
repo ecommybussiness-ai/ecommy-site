@@ -2,295 +2,208 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ecommy Business Solution</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecommy – Business Growth Online</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#f8fbff;color:#0b1c33}
 
-body{
-  background:#0e1117;
-  color:#e5e7eb;
-}
-
-/* ===== HEADER ===== */
+/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:#0b0f19;
-  padding:16px 70px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 70px;
+background:#fff;
 }
-
 .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:700;
+font-size:22px;
 }
-
-.logo img{width:42px}
-.logo span{font-size:22px;font-weight:600}
-
 nav a{
-  margin-left:28px;
-  text-decoration:none;
-  color:#cbd5f5;
-  font-size:15px;
+margin-left:30px;
+text-decoration:none;
+color:#0b1c33;
+font-weight:500;
 }
-nav a:hover{color:#4f7cff}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  padding:90px 70px;
-  gap:40px;
-  align-items:center;
+display:grid;
+grid-template-columns:1.1fr 1fr;
+align-items:center;
+padding:90px 70px;
+gap:40px;
 }
-
 .hero h1{
-  font-size:52px;
-  line-height:1.2;
-  animation:fadeUp 1s ease;
+font-size:52px;
+line-height:1.15;
+font-weight:800;
 }
-
-.hero h1 span{color:#4f7cff}
-
+.hero h1 span{color:#2f5bff}
 .hero p{
-  margin-top:18px;
-  max-width:520px;
-  font-size:17px;
-  color:#9ca3af;
-  animation:fadeUp 1.3s ease;
+margin:25px 0;
+font-size:16px;
+color:#445b78;
+max-width:520px;
 }
-
-.hero-buttons{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-  animation:fadeUp 1.6s ease;
+.buttons{
+display:flex;
+gap:15px;
+margin-top:20px;
 }
-
 .btn{
-  padding:14px 28px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  font-size:15px;
+padding:14px 28px;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
 }
-
-.btn.primary{
-  background:#4f7cff;
-  color:#fff;
+.primary{
+background:#2f5bff;
+color:#fff;
+border:none;
 }
-
-.btn.outline{
-  background:transparent;
-  color:#4f7cff;
-  border:1px solid #4f7cff;
+.primary:hover{transform:translateY(-2px)}
+.outline{
+background:transparent;
+border:2px solid #2f5bff;
+color:#2f5bff;
 }
-
-/* ===== REAL HERO IMAGE ===== */
-.hero-img{
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
-  animation:float 4s ease-in-out infinite;
-}
-
 .hero-img img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
+width:100%;
+border-radius:18px;
+box-shadow:0 25px 60px rgba(0,0,0,.15);
 }
 
-/* ===== STATS ===== */
+/* STATS */
 .stats{
-  background:#0b0f19;
-  padding:55px 70px;
-  display:flex;
-  justify-content:space-around;
-  text-align:center;
+display:flex;
+gap:50px;
+padding:0 70px 60px;
 }
+.stat h2{color:#2f5bff;font-size:26px}
+.stat p{font-size:14px}
 
-.stat h2{
-  font-size:32px;
-  color:#4f7cff;
-}
-.stat p{font-size:14px;color:#9ca3af}
-
-/* ===== SERVICES ===== */
-.services{
-  padding:90px 70px;
-}
-
-.services h2{
-  text-align:center;
-  font-size:36px;
-  margin-bottom:55px;
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:28px;
-}
-
-.card{
-  background:#111827;
-  padding:30px;
-  border-radius:14px;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 10px 30px rgba(79,124,255,.25);
-}
-
-.card h3{color:#4f7cff;margin-bottom:10px}
-.card p{font-size:14px;color:#9ca3af}
-
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact{
-  background:#0b0f19;
-  padding:90px 70px;
+background:#fff;
+padding:70px;
+margin:70px;
+border-radius:20px;
 }
-
-.contact h2{
-  text-align:center;
-  font-size:36px;
-  margin-bottom:40px;
-}
-
+.contact h2{font-size:32px;margin-bottom:10px}
+.contact p{color:#556b86;margin-bottom:25px}
 form{
-  max-width:520px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
 }
-
-input,textarea{
-  padding:14px;
-  background:#111827;
-  border:1px solid #1f2937;
-  border-radius:8px;
-  color:#fff;
+form input, form textarea{
+padding:14px;
+border-radius:8px;
+border:1px solid #ccd6e4;
+font-size:14px;
 }
-
-textarea{resize:none;height:120px}
-
+form textarea{grid-column:1/3;resize:none;height:120px}
 form button{
-  background:#4f7cff;
-  color:#fff;
-  border:none;
-  padding:14px;
-  border-radius:8px;
-  cursor:pointer;
+grid-column:1/3;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#2f5bff;
+color:#fff;
+font-weight:600;
+cursor:pointer;
 }
 
-/* ===== WHATSAPP BUTTON ===== */
+/* WHATSAPP */
 .whatsapp{
-  position:fixed;
-  right:25px;
-  bottom:25px;
-  background:#25D366;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-  z-index:999;
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:#fff;
+padding:14px 20px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+transition:.3s;
 }
-
-.whatsapp img{width:30px}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;text-align:center}
-  .hero-buttons{justify-content:center}
-}
+.whatsapp:hover{transform:scale(1.05)}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="Ecommy">
-    <span>Ecommy</span>
-  </div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
+<div class="logo">
+<img src="logo.png" height="34">
+Ecommy
+</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
-  <div>
-    <h1>Empowering Your <span>Business Growth</span> Online</h1>
-    <p>
-      Amazon Seller Support, Flipkart Account Management,  
-      Website Development & Digital Marketing Solutions.
-    </p>
-    <div class="hero-buttons">
-      <button class="btn primary">Our Services</button>
-      <button class="btn outline">Contact Us</button>
-    </div>
-  </div>
+<div>
+<h1>Empowering Your <span>Business Growth</span> Online</h1>
+<p>
+Amazon Seller Support, Flipkart Account Management, Website Development & Digital Marketing Solutions.
+</p>
+<div class="buttons">
+<button class="btn primary">Our Services</button>
+<button class="btn outline">Contact Us</button>
+</div>
+</div>
 
-  <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Team Working">
-  </div>
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="Team Working">
+</div>
 </section>
 
 <section class="stats">
-  <div class="stat"><h2>2+</h2><p>Years Experience</p></div>
-  <div class="stat"><h2>97%</h2><p>Satisfaction Rate</p></div>
-  <div class="stat"><h2>100+</h2><p>Projects Completed</p></div>
-</section>
-
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="card"><h3>Amazon Seller Support</h3><p>Account handling & growth strategy.</p></div>
-    <div class="card"><h3>Flipkart Services</h3><p>Seller onboarding & performance boost.</p></div>
-    <div class="card"><h3>Website Development</h3><p>Fast, secure & conversion focused sites.</p></div>
-    <div class="card"><h3>Digital Marketing</h3><p>SEO, Ads & branding solutions.</p></div>
-  </div>
+<div class="stat">
+<h2>2+</h2>
+<p>Years Experience</p>
+</div>
+<div class="stat">
+<h2>97%</h2>
+<p>Satisfaction Rate</p>
+</div>
+<div class="stat">
+<h2>100+</h2>
+<p>Projects Completed</p>
+</div>
 </section>
 
 <section class="contact">
-  <h2>Contact Us</h2>
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Email Address">
-    <textarea placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+<h2>Contact Us</h2>
+<p>Let’s grow your business together.</p>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
 </section>
 
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+<a class="whatsapp"
+href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ecommy%20Team,%20I%20need%20business%20support"
+target="_blank">
+WhatsApp
 </a>
 
 </body>
