@@ -1,100 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ecommy Business Solution</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecommy Business Solution</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <div class="logo">Ecommy</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="container header-flex">
+    <div class="brand">
+      <img src="logo.png">
+      <span>Ecommy</span>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <h1>Empowering Your <span>Business Growth</span> Online</h1>
-    <p>
-      Amazon Seller Support, Flipkart Account Management,
-      Website Development & Digital Marketing Solutions.
-    </p>
-    <div class="buttons">
-      <button class="primary">Our Services</button>
-      <button class="secondary">Contact Us</button>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Empowering Your <span>Business Growth</span> Online</h1>
+      <p>Amazon Seller Support, Flipkart Account Management, Website Development & Digital Marketing Solutions.</p>
+
+      <div class="stats">
+        <div><strong>2+</strong><span>Years Experience</span></div>
+        <div><strong>97%</strong><span>Satisfaction</span></div>
+        <div><strong>100+</strong><span>Projects</span></div>
+      </div>
+
+      <a href="https://wa.me/919343153987" class="btn">WhatsApp Us</a>
+    </div>
+
+    <div class="hero-image"></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="features">
+  <div class="container features-grid">
+    <div class="feature-box">
+      <i class="fa-solid fa-coins"></i>
+      <h3>Cost-effectiveness</h3>
+      <p>Budget-friendly ecommerce and IT solutions with high ROI.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Innovative Technology</h3>
+      <p>Latest tools & automation for faster business growth.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-briefcase"></i>
+      <h3>Industry Expertise</h3>
+      <p>Deep experience in ecommerce marketplaces.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-layer-group"></i>
+      <h3>Scalability</h3>
+      <p>Solutions that grow as your business grows.</p>
     </div>
   </div>
+</section>
 
-  <div class="hero-right">
-    <img src="hero.jpg" alt="Team Working">
+<!-- ADDITIONAL SERVICES (NEW SECTION) -->
+<section class="additional-services">
+  <div class="container">
+    <span class="tag">WHAT WE USE</span>
+    <h2>Our Additional Services – We’ve Got You Covered!</h2>
+    <p class="subtext">
+      At Ecommy, we provide additional services that meet all your business expectations.
+    </p>
+
+    <div class="additional-grid">
+      <div class="add-box">
+        <h4>Virtual Assistance</h4>
+        <p>
+          Dedicated virtual assistants to handle daily tasks, boost productivity
+          and streamline operations.
+        </p>
+      </div>
+
+      <div class="add-box">
+        <h4>Customer Support</h4>
+        <p>
+          24/7 multilingual customer support ensuring satisfaction and smooth communication.
+        </p>
+      </div>
+
+      <div class="add-box">
+        <h4>Data Entry & Management</h4>
+        <p>
+          Accurate data handling and management to keep your business organized.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services">
-  <div class="service">
-    <h3>Cost-effectiveness</h3>
-    <p>High quality services within your budget.</p>
-  </div>
-  <div class="service">
-    <h3>Innovative Technology</h3>
-    <p>Latest tools for performance-driven growth.</p>
-  </div>
-  <div class="service">
-    <h3>Industry Expertise</h3>
-    <p>E-commerce & IT focused solutions.</p>
-  </div>
-  <div class="service">
-    <h3>Scalability</h3>
-    <p>Grow as your business grows.</p>
+<section id="services" class="services">
+  <div class="container">
+    <h2>Our Core Services</h2>
+
+    <div class="service-list">
+      <div>Amazon Account Management</div>
+      <div>Flipkart Seller Support</div>
+      <div>Listing Optimization</div>
+      <div>Ads Management</div>
+      <div>Website Development</div>
+      <div>Digital Marketing</div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT FORM -->
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Contact Us</h2>
+      <p>
+        📞 9343153987<br>
+        📧 ecommybussiness@gmail.com
+      </p>
+    </div>
 
-  <form onsubmit="sendWhatsApp(); return false;">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <input type="email" id="email" placeholder="Email Address" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send on WhatsApp</button>
-  </form>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
 </section>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/919334153987" class="whatsapp" target="_blank">
-  WhatsApp
+<footer class="footer">
+  © 2026 Ecommy Business Solution. All Rights Reserved.
+</footer>
+
+<a href="https://wa.me/919343153987" class="whatsapp-float">
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
-
-<script>
-function sendWhatsApp() {
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
-
-  var url = "https://wa.me/919334153987?text="
-    + encodeURIComponent(
-      "New Website Enquiry 🚀\n\n"
-      + "Name: " + name + "\n"
-      + "Phone: " + phone + "\n"
-      + "Email: " + email + "\n"
-      + "Message: " + message
-    );
-
-  window.open(url, "_blank");
-}
-</script>
 
 </body>
 </html>
