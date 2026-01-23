@@ -1,110 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ecommy Business Solution</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecommy Business Solution</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" href="logo.png.png">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        header {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+body{
+    background:#f5f7fa;
+    color:#222;
+}
 
-        header img {
-            height: 50px;
-            width: auto;
-            background: #fff;
-            padding: 5px;
-            border-radius: 6px;
-        }
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
 
-        header h1 {
-            color: #fff;
-            font-size: 24px;
-            margin: 0;
-        }
+header img{
+    height:45px;
+    background:#fff;
+    padding:6px;
+    border-radius:8px;
+}
 
-        section {
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+header h1{
+    color:#fff;
+    font-size:22px;
+}
 
-        h2 {
-            color: #203a43;
-        }
+/* HERO */
+.hero{
+    padding:80px 40px;
+    background:#fff;
+    text-align:center;
+}
 
-        .services li {
-            margin: 8px 0;
-        }
+.hero h2{
+    font-size:36px;
+    margin-bottom:15px;
+    color:#0f2027;
+}
 
-        .whatsapp {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background: #25d366;
-            color: #fff;
-            padding: 14px 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
+.hero p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:30px;
+}
 
-        footer {
-            background: #203a43;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+.hero a{
+    display:inline-block;
+    background:#25D366;
+    color:#fff;
+    padding:14px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero a:hover{
+    background:#1ebe5d;
+}
+
+/* SERVICES */
+.services{
+    padding:60px 40px;
+}
+
+.services h2{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:40px;
+    color:#0f2027;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#203a43;
+}
+
+.card p{
+    color:#555;
+    font-size:15px;
+}
+
+/* CONTACT */
+.contact{
+    background:#fff;
+    padding:60px 40px;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:30px;
+    margin-bottom:20px;
+    color:#0f2027;
+}
+
+.contact p{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+    background:#0f2027;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <img src="logo.png" alt="Ecommy Logo">
-    <h1>Ecommy</h1>
+    <img src="logo.png.png" alt="Ecommy Logo">
+    <h1>Ecommy Business Solution</h1>
 </header>
 
-<section>
+<section class="hero">
     <h2>We Help Your Business Grow Online</h2>
     <p>Amazon | Flipkart | Website | Digital Marketing</p>
+    <a href="https://wa.me/919343153987" target="_blank">Chat on WhatsApp</a>
+</section>
 
+<section class="services">
     <h2>Our Services</h2>
-    <ul class="services">
-        <li>Amazon Seller Account Management</li>
-        <li>Product Listing & SEO Optimization</li>
-        <li>Amazon & Flipkart Ads Management</li>
-        <li>Account Health & Policy Support</li>
-        <li>Website Development</li>
-        <li>Digital Marketing</li>
-    </ul>
+    <div class="service-grid">
+        <div class="card">
+            <h3>Amazon Account Management</h3>
+            <p>Complete seller account handling with growth-focused strategy.</p>
+        </div>
+        <div class="card">
+            <h3>Listing & SEO Optimization</h3>
+            <p>Keyword-rich listings to increase visibility and conversions.</p>
+        </div>
+        <div class="card">
+            <h3>Amazon & Flipkart Ads</h3>
+            <p>ROI-driven ad campaigns to boost sales fast.</p>
+        </div>
+        <div class="card">
+            <h3>Account Health & Policy</h3>
+            <p>Suspension prevention & policy issue resolution.</p>
+        </div>
+        <div class="card">
+            <h3>Website Development</h3>
+            <p>Fast, mobile-friendly and conversion-focused websites.</p>
+        </div>
+        <div class="card">
+            <h3>Digital Marketing</h3>
+            <p>Social media, Google Ads & brand growth solutions.</p>
+        </div>
+    </div>
+</section>
 
+<section class="contact">
     <h2>Contact Us</h2>
     <p><strong>Phone / WhatsApp:</strong> 9343153987</p>
     <p><strong>Email:</strong> ecommybussiness@gmail.com</p>
 </section>
 
-<a class="whatsapp" href="https://wa.me/919343153987" target="_blank">
-    WhatsApp Us
-</a>
-
 <footer>
     © 2026 Ecommy Business Solution. All Rights Reserved.
 </footer>
+
+<a class="whatsapp" href="https://wa.me/919343153987" target="_blank">
+    WhatsApp Us
+</a>
 
 </body>
 </html>
