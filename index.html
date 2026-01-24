@@ -8,7 +8,28 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  var whatsappNumber = "919343153987"; // tumhara number
+
+  var whatsappMessage =
+    "New Website Enquiry:%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Email: " + email + "%0A" +
+    "Message: " + message;
+
+  var whatsappURL =
+    "https://wa.me/" + whatsappNumber + "?text=" + whatsappMessage;
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
 <body>
 
 <!-- HEADER -->
