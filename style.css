@@ -193,3 +193,42 @@ footer {
   position: relative;
   z-index: 2;
 }
+.site-footer {
+  background: #f8faff;
+  padding-top: 50px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 12px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  background: #eef2ff;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
