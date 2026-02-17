@@ -232,3 +232,112 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.why-us{
+  padding: 70px 20px;
+  background: #eef4ff;   /* light highlighted area like your screenshot */
+}
+
+.why-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;     /* ✅ full content center */
+}
+
+.why-heading{
+  margin-bottom: 35px;
+}
+
+.why-tag{
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+  border: 1px solid rgba(29,78,216,.15);
+}
+
+.why-heading h2{
+  font-size: 34px;
+  margin: 10px 0 10px;
+  color: #0b1220;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* ✅ heading highlight underline */
+.why-heading h2:after{
+  content:"";
+  display:block;
+  width: 80%;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: #1d4ed8;
+  opacity: .9;
+}
+
+.why-sub{
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.why-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.why-card{
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+  border: 1px solid rgba(15, 23, 42, .06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.why-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, .12);
+}
+
+.why-icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  margin: 0 auto 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: rgba(29,78,216,.10);
+}
+
+.why-card h3{
+  font-size: 18px;
+  margin: 6px 0 10px;
+  color: #0b1220;
+}
+
+.why-card p{
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+@media (max-width: 900px){
+  .why-cards{ grid-template-columns: 1fr; }
+  .why-heading h2{ font-size: 28px; }
+}
