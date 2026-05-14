@@ -2,7 +2,7 @@
 
 /********** Template CSS **********/
 :root {
-    --primary: #2ee66b;
+    --primary: #0d6efd;
     --secondary: #475569;
     --light: #f7fbff;
     --dark: #0f172a;
@@ -60,21 +60,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #2ee66b 0%, #38bdf8 100%);
+    background: linear-gradient(135deg, #1d8fd6 0%, #0d6efd 100%);
     border-color: transparent;
     box-shadow: 0 10px 30px rgba(56, 189, 248, 0.18);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: linear-gradient(135deg, #20c95a 0%, #0ea5e9 100%);
+    background: linear-gradient(135deg, #177ab7 0%, #1d8fd6 100%);
     border-color: transparent;
     box-shadow: 0 14px 36px rgba(14, 165, 233, 0.26);
 }
 
 .btn-outline-primary {
     color: var(--primary);
-    border-color: rgba(46, 230, 107, 0.32);
+    border-color: rgba(29, 143, 214, 0.28);
 }
 
 .btn-outline-primary:hover {
@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: #2ee66b;
+    color: #0d6efd;
 }
 
 .navbar.bg-white {
@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary {
-    background: linear-gradient(135deg, #2ee66b 0%, #38bdf8 100%) !important;
+    background: linear-gradient(135deg, #1d8fd6 0%, #0d6efd 100%) !important;
 }
 
 .navbar .dropdown-toggle::after {
@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-header {
-    background: linear-gradient(rgba(15, 23, 42, .30), rgba(46, 230, 107, .24)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(15, 23, 42, .30), rgba(13, 110, 253, .22)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -252,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*** About ***/
 .about {
-    background: linear-gradient(rgba(15, 23, 42, .18), rgba(46, 230, 107, .14)), url(../img/about.jpg) left center no-repeat;
+    background: linear-gradient(rgba(15, 23, 42, .18), rgba(13, 110, 253, .12)), url(../img/about.jpg) left center no-repeat;
     background-size: cover;
 }
 
@@ -544,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .owl-item.center .testimonial-item,
 .testimonial-item:hover {
-    background: linear-gradient(135deg, #2ee66b 0%, #38bdf8 100%);
+    background: linear-gradient(135deg, #1d8fd6 0%, #0d6efd 100%);
 }
 
 .owl-item.center .testimonial-item *,
@@ -666,8 +666,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .platform-strip {
-    background: linear-gradient(135deg, rgba(46, 230, 107, .10) 0%, rgba(56, 189, 248, .08) 100%);
-    border: 1px solid rgba(46, 230, 107, .16);
+    background: linear-gradient(135deg, rgba(29, 143, 214, .08) 0%, rgba(13, 110, 253, .08) 100%);
+    border: 1px solid rgba(13, 110, 253, .12);
     border-radius: 32px;
     box-shadow: 0 20px 60px rgba(15, 23, 42, .08);
 }
@@ -695,7 +695,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .platform-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(46, 230, 107, .30);
+    border-color: rgba(13, 110, 253, .28);
     box-shadow: 0 15px 35px rgba(15, 23, 42, .08);
 }
 
@@ -717,8 +717,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     color: #FFFFFF;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary) 0%, #38bdf8 100%);
-    box-shadow: 0 12px 25px rgba(46, 230, 107, .28);
+    background: linear-gradient(135deg, var(--primary) 0%, #0d6efd 100%);
+    box-shadow: 0 12px 25px rgba(13, 110, 253, .25);
     margin-bottom: 1rem;
 }
 
@@ -728,8 +728,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .trust-banner {
-    background: linear-gradient(135deg, #effdf2 0%, #eef8ff 100%);
-    border: 1px solid rgba(46, 230, 107, .14);
+    background: linear-gradient(135deg, #eef6ff 0%, #f5faff 100%);
+    border: 1px solid rgba(13, 110, 253, .12);
     border-radius: 32px;
     box-shadow: 0 24px 60px rgba(15, 23, 42, .06);
 }
@@ -739,7 +739,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #FFFFFF;
     border-radius: 22px;
     padding: 1.5rem;
-    border: 1px solid rgba(46, 230, 107, .12);
+    border: 1px solid rgba(148, 163, 184, .14);
     box-shadow: 0 12px 32px rgba(15, 23, 42, .04);
 }
 
@@ -750,7 +750,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(46, 230, 107, .16), rgba(56, 189, 248, .18));
+    background: linear-gradient(135deg, rgba(29, 143, 214, .15), rgba(13, 110, 253, .18));
     color: var(--primary);
     font-size: 1.25rem;
     margin-bottom: 1rem;
@@ -784,7 +784,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .faq-wrap .accordion-button:focus {
     box-shadow: none;
-    border-color: rgba(46, 230, 107, .25);
+    border-color: rgba(13, 110, 253, .25);
 }
 
 .faq-wrap .accordion-body {
@@ -792,12 +792,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-banner {
-    background: linear-gradient(135deg, rgba(46, 230, 107, .16) 0%, rgba(56, 189, 248, .14) 100%);
-    border: 1px solid rgba(46, 230, 107, .14);
+    background: linear-gradient(135deg, rgba(29, 143, 214, .14) 0%, rgba(13, 110, 253, .16) 100%);
+    border: 1px solid rgba(13, 110, 253, .12);
     border-radius: 32px;
     box-shadow: 0 20px 50px rgba(15, 23, 42, .05);
 }
 
 .cta-banner .btn {
-    box-shadow: 0 12px 30px rgba(46, 230, 107, .20);
+    box-shadow: 0 12px 30px rgba(13, 110, 253, .18);
 }
