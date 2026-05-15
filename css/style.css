@@ -189,8 +189,13 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, rgba(255,255,255,0.82) 0%, rgba(247,251,255,0.45) 60%, rgba(255,255,255,0.1) 100%);
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.46) 55%, rgba(15, 23, 42, 0.18) 100%);
     z-index: 1;
+}
+
+.carousel-caption p,
+.carousel-caption h1 {
+    text-shadow: 0 6px 24px rgba(0, 0, 0, .32);
 }
 
 .carousel-control-prev,
@@ -800,4 +805,51 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-banner .btn {
     box-shadow: 0 12px 30px rgba(46, 230, 107, .20);
+}
+
+
+/*** Blog ***/
+.blog-card {
+    height: 100%;
+    border-radius: 24px;
+    background: #FFFFFF;
+    border: 1px solid rgba(148, 163, 184, .14);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, .06);
+    overflow: hidden;
+    transition: .4s;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, .10);
+}
+
+.blog-card .blog-image {
+    height: 220px;
+    object-fit: cover;
+}
+
+.blog-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(29, 143, 214, .08);
+    border-radius: 999px;
+    padding: .45rem .85rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card h4 {
+    color: var(--dark);
+}
+
+.blog-card p {
+    color: #475569;
+}
+
+.blog-grid .btn {
+    box-shadow: none;
 }
