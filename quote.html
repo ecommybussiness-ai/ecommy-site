@@ -131,7 +131,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="fs-5 fw-medium text-primary">Get A Quote</p>
                     <h1 class="display-5 mb-4">Need Our Expert Help? We're Here!</h1>
-                    <p>Share your project details, and we will suggest the right service plan for your marketplace, website, or brand growth needs.</p>
+                    <p>Share your project details, and we will suggest the right service plan for your marketplace, website, review management, or brand growth needs.</p>
                     <p class="mb-4">Roshan Ventures focuses on simple communication, premium execution, and practical results for e-commerce businesses.</p>
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="tel:+919343153987">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
@@ -142,47 +142,51 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <h2 class="mb-4">Get A Free Quote</h2>
-                    <div class="row g-3">
+                    <form class="row g-3" data-google-sheet-form data-form-source="quote-page">
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="mail" placeholder="Your Email">
+                                <input type="email" class="form-control" id="mail" name="email" placeholder="Your Email" required>
                                 <label for="mail">Your Email</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your Mobile" required>
                                 <label for="mobile">Your Mobile</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <select class="form-select" id="service">
-                                <option selected>Marketplace Account Management</option>
-                                    <option value="">Advertisement & PPC</option>
-                                    <option value="">Website & App Development</option>
-                                    <option value="">Customer Support Management</option>
+                                <select class="form-select" id="service" name="service" required>
+                                    <option selected>Marketplace Account Management</option>
+                                    <option value="Amazon Account Management">Amazon Account Management</option>
+                                    <option value="Flipkart Account Management">Flipkart Account Management</option>
+                                    <option value="Amazon Review Management & Response">Amazon Review Management & Response</option>
+                                    <option value="Flipkart Review Management & Response">Flipkart Review Management & Response</option>
+                                    <option value="Advertisement & PPC">Advertisement & PPC</option>
+                                    <option value="Website & App Development">Website & App Development</option>
+                                    <option value="Customer Support Management">Customer Support Management</option>
                                 </select>
                                 <label for="service">Choose A Service</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 130px"></textarea>
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message"
+                                    style="height: 130px" required></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>
                         <div class="col-12 text-center">
                             <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

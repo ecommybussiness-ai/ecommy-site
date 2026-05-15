@@ -82,6 +82,56 @@
             }
         }
     });
+
+    // Lead forms to Google Sheet via Google Apps Script
+    const GOOGLE_SHEET_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx-Qbde2BB2WACbXqZytIvd3FB1kZaE09Doz33QqyL1mEYQvlodmo2Y1pmpc95EsAscQQ/exec';
+
+    const initLeadForms = () => {
+        const forms = document.querySelectorAll('form[data-google-sheet-form]');
+
+        forms.forEach((form) => {
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                if (!GOOGLE_SHEET_WEB_APP_URL || GOOGLE_SHEET_WEB_APP_URL.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
+                    alert('Please paste your Google Apps Script Web App URL in js/main.js first.');
+                    return;
+                }
+
+                const submitButton = form.querySelector('[type="submit"]');
+                const originalButtonText = submitButton ? submitButton.textContent : '';
+                const formData = new FormData(form);
+
+                formData.append('source', form.dataset.formSource || window.location.pathname.split('/').pop() || 'index.html');
+                formData.append('pageUrl', window.location.href);
+                formData.append('submittedAt', new Date().toISOString());
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                }
+
+                try {
+                    await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+
+                    form.reset();
+                    alert('Thank you! Your details have been sent successfully.');
+                } catch (error) {
+                    alert('Form could not be sent right now. Please try again or call us directly.');
+                } finally {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                    }
+                }
+            });
+        });
+    };
+
+    initLeadForms();
     
 })(jQuery);
-

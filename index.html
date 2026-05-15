@@ -608,47 +608,51 @@ Whether you are starting your online journey or want to scale your existing stor
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <h2 class="mb-4">Get A Free Quote</h2>
-                    <div class="row g-3">
+                    <form class="row g-3" data-google-sheet-form data-form-source="home-quote">
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="mail" placeholder="Your Email">
+                                <input type="email" class="form-control" id="mail" name="email" placeholder="Your Email" required>
                                 <label for="mail">Your Email</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your Mobile" required>
                                 <label for="mobile">Your Mobile</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <select class="form-select" id="service">
+                                <select class="form-select" id="service" name="service" required>
                                     <option selected>Amazon Account Management</option>
-                                    <option value="">E-Commerce Management</option>
-                                    <option value="">Website & App Development</option>
-                                    <option value="">Customer Support Management</option>
+                                    <option value="Flipkart Account Management">Flipkart Account Management</option>
+                                    <option value="Amazon Review Management & Response">Amazon Review Management & Response</option>
+                                    <option value="Flipkart Review Management & Response">Flipkart Review Management & Response</option>
+                                    <option value="Advertisement & PPC">Advertisement & PPC</option>
+                                    <option value="E-Commerce Management">E-Commerce Management</option>
+                                    <option value="Website & App Development">Website & App Development</option>
+                                    <option value="Customer Support Management">Customer Support Management</option>
                                 </select>
                                 <label for="service">Choose A Service</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 130px"></textarea>
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message"
+                                    style="height: 130px" required></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>
                         <div class="col-12 text-center">
                             <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
