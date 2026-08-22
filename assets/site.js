@@ -20,7 +20,7 @@ document.querySelectorAll('.footer').forEach((footer) => {
     <div class="footer-main">
       <div class="footer-brand"><a href="index.html" class="logo"><img src="assets/ecommy-logo.png" alt="ECOMMY logo"><span>ECOMMY</span></a><p>Marketplace growth, made wiser—for Indian brands ready to sell more online.</p><a class="footer-wa" href="https://wa.me/919343153987" target="_blank" rel="noopener">Chat on WhatsApp →</a></div>
       <div class="footer-column"><h3>Services</h3><a href="amazon-account-management-india.html">Amazon Management</a><a href="flipkart-account-management.html">Flipkart Management</a><a href="services.html#myntra">Myntra Management</a><a href="meesho-account-management.html">Meesho Management</a><a href="services.html#ajio">AJIO Management</a><a href="amazon-ppc-management.html">Amazon PPC Management</a></div>
-      <div class="footer-column"><h3>Explore</h3><a href="index.html#free-audit">Free Account Audit</a><a href="index.html#marketplaces">Marketplaces</a><a href="quick-commerce-management-india.html">Quick Commerce</a><a href="services.html">All Services</a><a href="blog.html">Seller Blog</a><a href="contact.html">Connect With Us</a></div>
+      <div class="footer-column"><h3>Explore</h3><a href="index.html#free-audit">Free Account Audit</a><a href="index.html#marketplaces">Marketplaces</a><a href="ecommerce-agency-india.html">eCommerce Agency India</a><a href="quick-commerce-management-india.html">Quick Commerce</a><a href="services.html">All Services</a><a href="blog.html">Seller Blog</a><a href="contact.html">Connect With Us</a></div>
       <div class="footer-column footer-contact"><h3>Connect with us</h3><a href="tel:+919343153987">+91 93431 53987</a><a href="mailto:contact@ecommy.in">contact@ecommy.in</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4-B+Shraddha+Shree+Colony+MR-9+Road+Indore+452010" target="_blank" rel="noopener">4-B, Shraddha Shree Colony,<br>MR-9 Road, Indore 452010 →</a></div>
     </div>
     <div class="footer-map"><iframe title="ECOMMY Business Solutions location in Shraddha Shree Colony, Indore" loading="lazy" src="https://www.google.com/maps?q=4-B%20Shraddha%20Shree%20Colony%20MR-9%20Road%20Indore%20452010&amp;output=embed"></iframe></div>
@@ -71,6 +71,17 @@ document.querySelectorAll('[data-enquiry]').forEach((form) => form.addEventListe
   ].filter(Boolean).join(' ');
   window.location.assign(`https://wa.me/919343153987?text=${encodeURIComponent(details)}`);
 }));
+
+// A friendly AI support assistant sits above the WhatsApp shortcut on every page.
+document.querySelectorAll('.float-wa').forEach((whatsApp) => {
+  if (document.querySelector('.ai-support-widget')) return;
+  const assistant = document.createElement('a');
+  assistant.className = 'ai-support-widget';
+  assistant.href = whatsApp.href;
+  assistant.setAttribute('aria-label', 'Chat with ECOMMY support on WhatsApp');
+  assistant.innerHTML = '<span>AI SUPPORT</span><img src="assets/ai-support-headset.png" alt="ECOMMY AI support assistant wearing a headset">';
+  document.body.insertBefore(assistant, whatsApp);
+});
 
 const carousel = document.querySelector('.wide-hero-slider');
 if (carousel) {
