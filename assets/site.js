@@ -72,15 +72,113 @@ document.querySelectorAll('[data-enquiry]').forEach((form) => form.addEventListe
   window.location.assign(`https://wa.me/919343153987?text=${encodeURIComponent(details)}`);
 }));
 
-// A friendly AI support assistant sits above the WhatsApp shortcut on every page.
+// AI support: captures enquiries and sends them to the existing ECOMMY Leads sheet.
 document.querySelectorAll('.float-wa').forEach((whatsApp) => {
   if (document.querySelector('.ai-support-widget')) return;
-  const assistant = document.createElement('a');
+  const sheetEndpoint = 'https://script.google.com/macros/s/AKfycbx-Qbde2BB2WACbXqZytIvd3FB1kZaE09Doz33QqyL1mEYQvlodmo2Y1pmpc95EsAscQQ/exec';
+  const assistant = document.createElement('button');
+  assistant.type = 'button';
   assistant.className = 'ai-support-widget';
-  assistant.href = whatsApp.href;
-  assistant.setAttribute('aria-label', 'Chat with ECOMMY support on WhatsApp');
+  assistant.setAttribute('aria-label', 'Open ECOMMY AI support');
   assistant.innerHTML = '<span>AI SUPPORT</span><img src="assets/ai-support-headset.png" alt="ECOMMY AI support assistant wearing a headset">';
-  document.body.insertBefore(assistant, whatsApp);
+
+  const panel = document.createElement('aside');
+  panel.className = 'ai-chat-panel';
+  panel.setAttribute('aria-label', 'ECOMMY AI support chat');
+  panel.innerHTML = '<div class="ai-chat-head"><div><small>ECOMMY</small><strong>AI Support</strong><em><i></i> Online now</em></div><button type="button" aria-label="Close AI support">×</button></div><div class="ai-chat-messages" aria-live="polite"></div><form class="ai-chat-form"><input type="text" autocomplete="off" aria-label="Your reply" placeholder="Type your answer…"><button type="submit" aria-label="Send message">↑</button></form><p class="ai-chat-note">Your details are shared only with ECOMMY for support.</p>';
+  document.body.insertBefore(panel, whatsApp);
+  document.body.insertBefore(assistant, panel);
+
+  const messages = panel.querySelector('.ai-chat-messages');
+  const form = panel.querySelector('.ai-chat-form');
+  const input = form.querySelector('input');
+  const close = panel.querySelector('.ai-chat-head button');
+  const lead = { service: '', name: '', mobile: '', city: '', wantsCall: '' };
+  let stage = 'service';
+
+  const addBubble = (text, type = 'bot') => {
+    const bubble = document.createElement('div');
+    bubble.className = `ai-bubble ${type}`;
+    bubble.textContent = text;
+    messages.appendChild(bubble);
+    messages.scrollTop = messages.scrollHeight;
+  };
+  const addChoices = (choices) => {
+    const choicesBox = document.createElement('div');
+    choicesBox.className = 'ai-chat-choices';
+    choices.forEach((choice) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = choice;
+      button.addEventListener('click', () => answer(choice));
+      choicesBox.appendChild(button);
+    });
+    messages.appendChild(choicesBox);
+    messages.scrollTop = messages.scrollHeight;
+  };
+  const removeChoices = () => messages.querySelectorAll('.ai-chat-choices').forEach((element) => element.remove());
+  const recordLead = () => {
+    const payload = new URLSearchParams({
+      source: 'Website AI Support',
+      name: lead.name,
+      email: '',
+      mobile: lead.mobile,
+      service: lead.service,
+      subject: `Representative request: ${lead.wantsCall}`,
+      message: `City: ${lead.city} | Chatbot lead | Representative: ${lead.wantsCall}`,
+      pageUrl: window.location.href,
+      submittedAt: new Date().toISOString(),
+    });
+    fetch(sheetEndpoint, { method: 'POST', mode: 'no-cors', body: payload }).catch(() => {});
+  };
+  const resetConversation = () => {
+    messages.innerHTML = '';
+    stage = 'service';
+    lead.service = ''; lead.name = ''; lead.mobile = ''; lead.city = ''; lead.wantsCall = '';
+    input.value = '';
+    input.placeholder = 'Choose a marketplace below…';
+    input.disabled = true;
+    addBubble('Hi! How can I help you? Choose your marketplace.');
+    addChoices(['Flipkart', 'Amazon', 'Myntra', 'Meesho', 'AJIO', 'Nykaa', 'Others']);
+  };
+  const ask = (text, nextStage, placeholder) => {
+    stage = nextStage;
+    input.disabled = false;
+    input.placeholder = placeholder;
+    input.focus();
+    addBubble(text);
+  };
+  const answer = (rawAnswer) => {
+    const value = rawAnswer.trim();
+    if (!value) return;
+    if (stage === 'service') {
+      removeChoices(); lead.service = value; addBubble(value, 'user'); ask('Great. What is your name?', 'name', 'Enter your name…'); return;
+    }
+    if (stage === 'name') {
+      lead.name = value; addBubble(value, 'user'); ask('May I know your contact number please?', 'mobile', '10-digit mobile number…'); return;
+    }
+    if (stage === 'mobile') {
+      const digits = value.replace(/\D/g, '').slice(-10);
+      if (digits.length !== 10) { addBubble('Please enter a valid 10-digit mobile number.'); return; }
+      lead.mobile = digits; addBubble(value, 'user'); ask('Your city please?', 'city', 'Enter your city…'); return;
+    }
+    if (stage === 'city') {
+      lead.city = value; addBubble(value, 'user'); stage = 'call'; input.disabled = true; input.placeholder = 'Choose Yes or No below…'; addBubble('Would you like to connect with our representative?'); addChoices(['Yes, call me', 'No, thank you']); return;
+    }
+    if (stage === 'call') {
+      removeChoices(); lead.wantsCall = value.startsWith('Yes') ? 'Yes' : 'No'; addBubble(value, 'user'); recordLead(); input.disabled = true;
+      if (lead.wantsCall === 'Yes') {
+        addBubble('Thanks, your details have been shared. Tap Call now to connect with ECOMMY.');
+        const call = document.createElement('a'); call.className = 'ai-call-now'; call.href = 'tel:+919343153987'; call.textContent = 'Call +91 93431 53987'; messages.appendChild(call);
+      } else {
+        addBubble('Thank you. Our team has received your enquiry and will get back to you soon.');
+      }
+      const restart = document.createElement('button'); restart.type = 'button'; restart.className = 'ai-restart'; restart.textContent = 'Start new chat'; restart.addEventListener('click', resetConversation); messages.appendChild(restart); messages.scrollTop = messages.scrollHeight; stage = 'done';
+    }
+  };
+  form.addEventListener('submit', (event) => { event.preventDefault(); if (!input.disabled) { answer(input.value); input.value = ''; } });
+  assistant.addEventListener('click', () => { panel.classList.toggle('is-open'); if (panel.classList.contains('is-open') && !messages.children.length) resetConversation(); });
+  close.addEventListener('click', () => panel.classList.remove('is-open'));
 });
 
 const carousel = document.querySelector('.wide-hero-slider');
