@@ -1,11 +1,9 @@
 // Keep the ECOMMY browser-tab icon consistent across every page.
-if (!document.querySelector('link[rel="icon"]')) {
-  const favicon = document.createElement('link');
-  favicon.rel = 'icon';
-  favicon.type = 'image/png';
-  favicon.href = 'assets/ecommy-favicon.png';
-  document.head.appendChild(favicon);
-}
+const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/svg+xml';
+favicon.href = 'assets/ecommy-favicon-round.svg';
+if (!favicon.parentNode) document.head.appendChild(favicon);
 
 // Decorative desktop cursor. It is disabled on touch devices and for reduced-motion users.
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
@@ -55,12 +53,86 @@ document.querySelectorAll('.links').forEach((nav) => {
   }
 });
 
+document.querySelectorAll('.links').forEach((nav) => {
+  if (!nav.querySelector('a[href="careers.html"]')) {
+    const career = document.createElement('a');
+    career.href = 'careers.html';
+    career.textContent = 'Careers';
+    nav.insertBefore(career, nav.querySelector('a[href="contact.html"]') || null);
+  }
+});
+
+const caseStudyGrid = document.querySelector('.case-grid');
+if (caseStudyGrid && !document.querySelector('.service-proof-gallery')) {
+  const proof = document.createElement('section');
+  proof.className = 'service-proof-gallery';
+  proof.innerHTML = `<div class="wrap"><div class="eyebrow">How the work comes together</div><h2 class="title">One team across the work that moves a marketplace.</h2><p class="section-intro">From daily account operations and advertising to catalogue quality, every service is designed to make execution clearer for your business.</p><div class="proof-gallery-grid"><figure><img src="assets/ecommy-service-account-management.jpg" alt="ECOMMY eCommerce account management service"><figcaption><strong>Account management</strong><span>Listings, account health and seller operations.</span></figcaption></figure><figure><img src="assets/ecommy-service-performance.jpg" alt="ECOMMY performance advertising service"><figcaption><strong>Performance marketing</strong><span>Campaign structure and useful sales insights.</span></figcaption></figure><figure><img src="assets/ecommy-service-catalogue.jpg" alt="ECOMMY catalogue management service"><figcaption><strong>Catalogue management</strong><span>Product detail, visual quality and listing readiness.</span></figcaption></figure></div></div>`;
+  caseStudyGrid.closest('section').insertAdjacentElement('afterend', proof);
+}
+
+// Public customer feedback, shown without business names and rotated automatically.
+const homeTeam = document.querySelector('main .team');
+if (homeTeam && !document.querySelector('.review-rail')) {
+  const reviews = [
+    ['Aashish Thakur', 'Reliable service and quick support. The team was always available to address our concerns and provided effective solutions whenever needed.'],
+    ['Ritesh Puri', 'The team was very helpful for sales management and explained the Amazon platform criteria clearly.'],
+    ['Vicky Chouhan', 'The team clearly understands eCommerce and shared useful insights that helped improve our store performance.'],
+    ['Mahesh Jhajharia', 'Karan did a fantastic job optimising our store. We have seen noticeable improvements since implementing his recommendations.'],
+    ['Sonal Songara', 'Karan was always available whenever we needed assistance. Every question was handled professionally and issues were resolved quickly.'],
+    ['Krishnapal Singh Chawda', 'I was looking for a good agency for account handling and received very good support for my business.'],
+    ['Vivek Kale', 'Our requirements were understood properly. We received guidance at every project stage along with timely updates.'],
+    ['Shivani Ahirwar', 'Whenever we faced an issue, the team responded quickly and provided practical solutions.'],
+    ['Komal Srivastva', 'Excellent experience. The eCommerce services were professional, reliable and helpful.'],
+    ['Deepak Kherde', 'Great experience working with the team. The project was handled very professionally.'],
+    ['Anuj Tiwari', 'The support helped make our business processes clearer and more efficient.'],
+    ['Ajay Surage', 'From website development to order management and digital marketing, everything was handled professionally.'],
+  ];
+  const rail = document.createElement('section');
+  rail.className = 'review-rail';
+  rail.innerHTML = `<div class="wrap review-rail-head"><div><div class="eyebrow">Client reviews</div><h2>What people <em>say.</em></h2><p>Real feedback from people who have worked with our team.</p></div><div class="review-rail-controls"><button type="button" aria-label="Previous reviews">←</button><button type="button" aria-label="Next reviews">→</button></div></div><div class="review-viewport"><div class="review-track">${reviews.map(([name, quote]) => `<article class="review-card"><div class="review-stars" aria-label="Five star review">★★★★★</div><p>“${quote}”</p><div class="review-person"><b>${name.charAt(0)}</b><strong>${name}</strong></div></article>`).join('')}</div></div>`;
+  homeTeam.insertAdjacentElement('beforebegin', rail);
+  const track = rail.querySelector('.review-track');
+  const cards = [...track.querySelectorAll('.review-card')];
+  cards.forEach((card) => track.appendChild(card.cloneNode(true)));
+  const controls = [...rail.querySelectorAll('.review-rail-controls button')];
+  let index = 0;
+  let timer;
+  const render = () => {
+    const first = track.querySelector('.review-card');
+    if (!first) return;
+    const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+    const offset = index * (first.getBoundingClientRect().width + gap);
+    track.style.transform = `translate3d(-${offset}px,0,0)`;
+  };
+  const move = (direction) => {
+    index += direction;
+    if (index < 0) {
+      track.style.transition = 'none'; index = cards.length; render();
+      requestAnimationFrame(() => requestAnimationFrame(() => { track.style.transition = ''; index = cards.length - 1; render(); }));
+      return;
+    }
+    render();
+    if (index === cards.length) {
+      window.setTimeout(() => {
+        track.style.transition = 'none'; index = 0; render();
+        requestAnimationFrame(() => requestAnimationFrame(() => { track.style.transition = ''; }));
+      }, 720);
+    }
+  };
+  const stop = () => window.clearInterval(timer);
+  const play = () => { stop(); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => move(1), 3500); };
+  controls[0].addEventListener('click', () => { move(-1); play(); });
+  controls[1].addEventListener('click', () => { move(1); play(); });
+  window.addEventListener('resize', render, { passive: true });
+  render(); play();
+}
+
 document.querySelectorAll('.footer').forEach((footer) => {
   footer.innerHTML = `<div class="wrap footer-full">
     <div class="footer-main">
       <div class="footer-brand"><a href="index.html" class="logo"><img src="assets/ecommy-logo.png" alt="ECOMMY logo"><span>ECOMMY</span></a><p>Marketplace growth, made wiser—for Indian brands ready to sell more online.</p><a class="footer-wa" href="https://wa.me/919343153987" target="_blank" rel="noopener">Chat on WhatsApp →</a></div>
       <div class="footer-column"><h3>Services</h3><a href="amazon-account-management-india.html">Amazon Management</a><a href="flipkart-account-management.html">Flipkart Management</a><a href="meesho-account-management.html">Meesho Management</a><a href="amazon-ppc-management.html">Amazon PPC Management</a><a href="catalogue-creation-services-india.html">Catalogue Creation</a><a href="amazon-a-plus-content-services-india.html">Amazon A+ Content</a></div>
-      <div class="footer-column"><h3>Explore</h3><a href="index.html#free-audit">Free Account Audit</a><a href="ecommerce-agency-india.html">eCommerce Agency India</a><a href="ecommerce-agency-indore.html">eCommerce Agency Indore</a><a href="ecommerce-website-development-indore.html">Website Development Indore</a><a href="quick-commerce-management-india.html">Quick Commerce</a><a href="services.html">All Services</a><a href="blog.html">Seller Blog</a><a href="contact.html">Connect With Us</a></div>
+      <div class="footer-column"><h3>Explore</h3><a href="index.html#free-audit">Free Account Audit</a><a href="ecommerce-agency-india.html">eCommerce Agency India</a><a href="ecommerce-agency-indore.html">eCommerce Agency Indore</a><a href="ecommerce-website-development-indore.html">Website Development Indore</a><a href="quick-commerce-management-india.html">Quick Commerce</a><a href="services.html">All Services</a><a href="blog.html">Seller Blog</a><a href="careers.html">Careers</a><a href="contact.html">Connect With Us</a></div>
       <div class="footer-column footer-contact"><h3>Connect with us</h3><a href="tel:+919343153987">+91 93431 53987</a><a href="mailto:contact@ecommy.in">contact@ecommy.in</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4-B+Shraddha+Shree+Colony+MR-9+Road+Indore+452010" target="_blank" rel="noopener">4-B, Shraddha Shree Colony,<br>MR-9 Road, Indore 452010 →</a></div>
     </div>
     <div class="footer-map"><iframe title="ECOMMY Business Solutions location in Shraddha Shree Colony, Indore" loading="lazy" src="https://www.google.com/maps?q=4-B%20Shraddha%20Shree%20Colony%20MR-9%20Road%20Indore%20452010&amp;output=embed"></iframe></div>
@@ -109,6 +181,13 @@ document.querySelectorAll('[data-enquiry]').forEach((form) => form.addEventListe
     service && `I need help with ${service}.`,
     message && `My requirement: ${message}`,
   ].filter(Boolean).join(' ');
+  window.location.assign(`https://wa.me/919343153987?text=${encodeURIComponent(details)}`);
+}));
+
+document.querySelectorAll('[data-career-form]').forEach((form) => form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const value = (name) => form.querySelector(`[name="${name}"]`)?.value.trim() || '';
+  const details = ['Hello ECOMMY, I would like to apply for a career opportunity.', `Name: ${value('name')}`, `Phone: ${value('phone')}`, `Email: ${value('email')}`, `Preferred role: ${value('role')}`, value('message') && `Profile: ${value('message')}`].filter(Boolean).join('\\n');
   window.location.assign(`https://wa.me/919343153987?text=${encodeURIComponent(details)}`);
 }));
 
