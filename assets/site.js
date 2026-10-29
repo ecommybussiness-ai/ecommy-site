@@ -2,8 +2,8 @@
 if (!document.querySelector('link[rel="icon"]')) {
   const favicon = document.createElement('link');
   favicon.rel = 'icon';
-  favicon.type = 'image/svg+xml';
-  favicon.href = 'assets/favicon.svg';
+  favicon.type = 'image/png';
+  favicon.href = 'assets/ecommy-favicon.png';
   document.head.appendChild(favicon);
 }
 

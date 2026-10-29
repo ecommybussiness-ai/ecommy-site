@@ -3,9 +3,9 @@
   "short_name": "ECOMMY",
   "icons": [
     {
-      "src": "assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/ecommy-favicon.png",
+      "sizes": "670x584",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
