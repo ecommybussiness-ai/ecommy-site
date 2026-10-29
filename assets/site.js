@@ -1,3 +1,43 @@
+// Keep the ECOMMY browser-tab icon consistent across every page.
+if (!document.querySelector('link[rel="icon"]')) {
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/svg+xml';
+  favicon.href = 'assets/favicon.svg';
+  document.head.appendChild(favicon);
+}
+
+// Decorative desktop cursor. It is disabled on touch devices and for reduced-motion users.
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
+  && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const dot = document.createElement('span');
+  const ring = document.createElement('span');
+  dot.className = 'ecommy-cursor-dot';
+  ring.className = 'ecommy-cursor-ring';
+  dot.setAttribute('aria-hidden', 'true');
+  ring.setAttribute('aria-hidden', 'true');
+  document.body.append(dot, ring);
+  document.documentElement.classList.add('ecommy-cursor');
+  let pointerX = -100; let pointerY = -100; let ringX = -100; let ringY = -100;
+  const renderCursor = () => {
+    ringX += (pointerX - ringX) * 0.17;
+    ringY += (pointerY - ringY) * 0.17;
+    dot.style.transform = `translate3d(${pointerX - 4}px, ${pointerY - 4}px, 0)`;
+    ring.style.transform = `translate3d(${ringX - 17}px, ${ringY - 17}px, 0)`;
+    requestAnimationFrame(renderCursor);
+  };
+  window.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX; pointerY = event.clientY;
+    document.documentElement.classList.remove('cursor-hidden');
+  }, { passive: true });
+  document.addEventListener('pointerover', (event) => {
+    document.documentElement.classList.toggle('cursor-active', Boolean(event.target.closest('a, button, input, select, textarea, summary, [role="button"]')));
+  });
+  document.addEventListener('mouseleave', () => document.documentElement.classList.add('cursor-hidden'));
+  document.addEventListener('mouseenter', () => document.documentElement.classList.remove('cursor-hidden'));
+  renderCursor();
+}
+
 document.querySelectorAll('[data-menu]').forEach((button) => {
   button.addEventListener('click', () => {
     const nav = button.closest('.nav');
