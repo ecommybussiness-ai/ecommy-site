@@ -3,8 +3,8 @@
   "short_name": "ECOMMY",
   "icons": [
     {
-      "src": "assets/ecommy-favicon.png",
-      "sizes": "670x584",
+      "src": "assets/ecommy-favicon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }

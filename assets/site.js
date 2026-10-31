@@ -2,7 +2,7 @@
 const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
 favicon.rel = 'icon';
 favicon.type = 'image/svg+xml';
-favicon.href = 'assets/ecommy-favicon-round.svg';
+favicon.href = 'assets/ecommy-favicon-simple.svg?v=2';
 if (!favicon.parentNode) document.head.appendChild(favicon);
 
 // Decorative desktop cursor. It is disabled on touch devices and for reduced-motion users.
@@ -62,6 +62,20 @@ document.querySelectorAll('.links').forEach((nav) => {
   }
 });
 
+// Transparent Amazon SPN status panel. The wording intentionally reflects the
+// current submitted status; it does not claim certification or publication.
+const marketplaceStrip = document.querySelector('.marketplace-logos');
+if (marketplaceStrip && !document.querySelector('.spn-status-panel')) {
+  const spnPanel = document.createElement('section');
+  spnPanel.className = 'spn-status-panel';
+  spnPanel.setAttribute('aria-label', 'Amazon service provider network status');
+  spnPanel.innerHTML = `<div class="wrap spn-status-grid">
+    <div class="spn-status-intro"><div class="eyebrow">Marketplace credentials</div><h2>Built for trusted marketplace <em>growth.</em></h2><p>Our Amazon Account Management service listing has been submitted through the Amazon Solution Provider Portal.</p></div>
+    <div class="spn-status-card"><span class="spn-card-label">Amazon SPN</span><strong>Service Provider<br>Network</strong><small><i aria-hidden="true">•</i> Account Management listing submitted</small></div>
+  </div>`;
+  marketplaceStrip.insertAdjacentElement('afterend', spnPanel);
+}
+
 const caseStudyGrid = document.querySelector('.case-grid');
 if (caseStudyGrid && !document.querySelector('.service-proof-gallery')) {
   const proof = document.createElement('section');
@@ -70,7 +84,7 @@ if (caseStudyGrid && !document.querySelector('.service-proof-gallery')) {
   caseStudyGrid.closest('section').insertAdjacentElement('afterend', proof);
 }
 
-// Public customer feedback, shown without business names and rotated automatically.
+// Public customer feedback, shown without business names in a continuous moving rail.
 const homeTeam = document.querySelector('main .team');
 if (homeTeam && !document.querySelector('.review-rail')) {
   const reviews = [
@@ -89,42 +103,14 @@ if (homeTeam && !document.querySelector('.review-rail')) {
   ];
   const rail = document.createElement('section');
   rail.className = 'review-rail';
-  rail.innerHTML = `<div class="wrap review-rail-head"><div><div class="eyebrow">Client reviews</div><h2>What people <em>say.</em></h2><p>Real feedback from people who have worked with our team.</p></div><div class="review-rail-controls"><button type="button" aria-label="Previous reviews">←</button><button type="button" aria-label="Next reviews">→</button></div></div><div class="review-viewport"><div class="review-track">${reviews.map(([name, quote]) => `<article class="review-card"><div class="review-stars" aria-label="Five star review">★★★★★</div><p>“${quote}”</p><div class="review-person"><b>${name.charAt(0)}</b><strong>${name}</strong></div></article>`).join('')}</div></div>`;
+  rail.innerHTML = `<div class="wrap review-rail-head"><div><div class="eyebrow">Client reviews</div><h2>What people <em>say.</em></h2><p>Real feedback from people who have worked with our team.</p></div><span class="review-rail-note">Live client feedback <b>→</b></span></div><div class="review-viewport"><div class="review-track">${reviews.map(([name, quote]) => `<article class="review-card"><div class="review-stars" aria-label="Five star review">★★★★★</div><p>“${quote}”</p><div class="review-person"><b>${name.charAt(0)}</b><strong>${name}</strong></div></article>`).join('')}</div></div>`;
   homeTeam.insertAdjacentElement('beforebegin', rail);
   const track = rail.querySelector('.review-track');
   const cards = [...track.querySelectorAll('.review-card')];
   cards.forEach((card) => track.appendChild(card.cloneNode(true)));
-  const controls = [...rail.querySelectorAll('.review-rail-controls button')];
-  let index = 0;
-  let timer;
-  const render = () => {
-    const first = track.querySelector('.review-card');
-    if (!first) return;
-    const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
-    const offset = index * (first.getBoundingClientRect().width + gap);
-    track.style.transform = `translate3d(-${offset}px,0,0)`;
-  };
-  const move = (direction) => {
-    index += direction;
-    if (index < 0) {
-      track.style.transition = 'none'; index = cards.length; render();
-      requestAnimationFrame(() => requestAnimationFrame(() => { track.style.transition = ''; index = cards.length - 1; render(); }));
-      return;
-    }
-    render();
-    if (index === cards.length) {
-      window.setTimeout(() => {
-        track.style.transition = 'none'; index = 0; render();
-        requestAnimationFrame(() => requestAnimationFrame(() => { track.style.transition = ''; }));
-      }, 720);
-    }
-  };
-  const stop = () => window.clearInterval(timer);
-  const play = () => { stop(); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => move(1), 3500); };
-  controls[0].addEventListener('click', () => { move(-1); play(); });
-  controls[1].addEventListener('click', () => { move(1); play(); });
-  window.addEventListener('resize', render, { passive: true });
-  render(); play();
+  // The duplicate set creates a seamless loop. Movement is CSS-only, so it
+  // keeps flowing smoothly instead of stepping one card at a time.
+  track.setAttribute('aria-label', 'Continuously moving client reviews');
 }
 
 document.querySelectorAll('.footer').forEach((footer) => {
