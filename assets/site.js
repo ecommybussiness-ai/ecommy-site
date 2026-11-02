@@ -62,16 +62,19 @@ document.querySelectorAll('.links').forEach((nav) => {
   }
 });
 
-// Transparent Amazon SPN status panel. The wording intentionally reflects the
+// Marketplace partner status panel. Amazon wording intentionally reflects the
 // current submitted status; it does not claim certification or publication.
 const marketplaceStrip = document.querySelector('.marketplace-logos');
 if (marketplaceStrip && !document.querySelector('.spn-status-panel')) {
   const spnPanel = document.createElement('section');
   spnPanel.className = 'spn-status-panel';
-  spnPanel.setAttribute('aria-label', 'Amazon service provider network status');
+  spnPanel.setAttribute('aria-label', 'Marketplace partner and service status');
   spnPanel.innerHTML = `<div class="wrap spn-status-grid">
     <div class="spn-status-intro"><div class="eyebrow">Marketplace credentials</div><h2>Built for trusted marketplace <em>growth.</em></h2><p>Our Amazon Account Management service listing has been submitted through the Amazon Solution Provider Portal.</p></div>
-    <div class="spn-status-card"><span class="spn-card-label">Amazon SPN</span><strong>Service Provider<br>Network</strong><small><i aria-hidden="true">•</i> Account Management listing submitted</small></div>
+    <div class="partner-status-cards">
+      <div class="spn-status-card"><span class="spn-card-label">Amazon SPN</span><strong>Service Provider<br>Network</strong><small><i aria-hidden="true">•</i> Account Management listing submitted</small></div>
+      <div class="shopify-status-card"><img src="assets/shopify-partner-badge.png" alt="Shopify Partner"><span>Shopify Partner organization</span></div>
+    </div>
   </div>`;
   marketplaceStrip.insertAdjacentElement('afterend', spnPanel);
 }
@@ -119,7 +122,7 @@ document.querySelectorAll('.footer').forEach((footer) => {
       <div class="footer-brand"><a href="index.html" class="logo"><img src="assets/ecommy-logo.png" alt="ECOMMY logo"><span>ECOMMY</span></a><p>Marketplace growth, made wiser—for Indian brands ready to sell more online.</p><a class="footer-wa" href="https://wa.me/919343153987" target="_blank" rel="noopener">Chat on WhatsApp →</a></div>
       <div class="footer-column"><h3>Services</h3><a href="amazon-account-management-india.html">Amazon Management</a><a href="flipkart-account-management.html">Flipkart Management</a><a href="meesho-account-management.html">Meesho Management</a><a href="amazon-ppc-management.html">Amazon PPC Management</a><a href="catalogue-creation-services-india.html">Catalogue Creation</a><a href="amazon-a-plus-content-services-india.html">Amazon A+ Content</a></div>
       <div class="footer-column"><h3>Explore</h3><a href="index.html#free-audit">Free Account Audit</a><a href="ecommerce-agency-india.html">eCommerce Agency India</a><a href="ecommerce-agency-indore.html">eCommerce Agency Indore</a><a href="ecommerce-website-development-indore.html">Website Development Indore</a><a href="quick-commerce-management-india.html">Quick Commerce</a><a href="services.html">All Services</a><a href="blog.html">Seller Blog</a><a href="careers.html">Careers</a><a href="contact.html">Connect With Us</a></div>
-      <div class="footer-column footer-contact"><h3>Connect with us</h3><a href="tel:+919343153987">+91 93431 53987</a><a href="mailto:contact@ecommy.in">contact@ecommy.in</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4-B+Shraddha+Shree+Colony+MR-9+Road+Indore+452010" target="_blank" rel="noopener">4-B, Shraddha Shree Colony,<br>MR-9 Road, Indore 452010 →</a><span class="footer-gstin">GSTIN: 23AAMFE7686E1Z6</span></div>
+      <div class="footer-column footer-contact"><h3>Connect with us</h3><a href="tel:+919343153987">+91 93431 53987</a><a href="mailto:contact@ecommy.in">contact@ecommy.in</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4-B+Shraddha+Shree+Colony+MR-9+Road+Indore+452010" target="_blank" rel="noopener">4-B, Shraddha Shree Colony,<br>MR-9 Road, Indore 452010 →</a><span class="footer-gstin">GSTIN: 23AAMFE7686E1Z6</span><div class="footer-partner"><span>Shopify Partner</span><img src="assets/shopify-partner-badge.png" alt="Shopify Partner"></div></div>
     </div>
     <div class="footer-map"><iframe title="ECOMMY Business Solutions location in Shraddha Shree Colony, Indore" loading="lazy" src="https://www.google.com/maps?q=4-B%20Shraddha%20Shree%20Colony%20MR-9%20Road%20Indore%20452010&amp;output=embed"></iframe></div>
     <div class="footer-bottom"><span>© ${new Date().getFullYear()} ECOMMY Business Solutions. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></span></div>
