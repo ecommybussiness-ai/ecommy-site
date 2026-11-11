@@ -1,3 +1,7 @@
+// Existing ECOMMY lead endpoint. Every public enquiry form uses this same
+// endpoint so phone and service details are not lost when WhatsApp opens.
+const enquirySheetEndpoint = 'https://script.google.com/macros/s/AKfycbx-Qbde2BB2WACbXqZytIvd3FB1kZaE09Doz33QqyL1mEYQvlodmo2Y1pmpc95EsAscQQ/exec';
+
 // Keep the ECOMMY browser-tab icon consistent across every page.
 const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
 favicon.rel = 'icon';
@@ -18,8 +22,8 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
   document.documentElement.classList.add('ecommy-cursor');
   let pointerX = -100; let pointerY = -100; let ringX = -100; let ringY = -100;
   const renderCursor = () => {
-    ringX += (pointerX - ringX) * 0.17;
-    ringY += (pointerY - ringY) * 0.17;
+    ringX += (pointerX - ringX) * 0.32;
+    ringY += (pointerY - ringY) * 0.32;
     dot.style.transform = `translate3d(${pointerX - 4}px, ${pointerY - 4}px, 0)`;
     ring.style.transform = `translate3d(${ringX - 17}px, ${ringY - 17}px, 0)`;
     requestAnimationFrame(renderCursor);
@@ -51,6 +55,19 @@ document.querySelectorAll('.links').forEach((nav) => {
     blog.textContent = 'Blog';
     nav.insertBefore(blog, nav.querySelector('a[href="contact.html"]') || null);
   }
+});
+
+// Resource hub filters: client-side filtering keeps every guide URL crawlable
+// while letting a visitor quickly choose the topic they need.
+document.querySelectorAll('[data-resource-filter]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.resourceFilter;
+    document.querySelectorAll('[data-resource-filter]').forEach((item) => item.classList.toggle('is-active', item === button));
+    document.querySelectorAll('[data-resource-card]').forEach((card) => {
+      const topics = card.dataset.resourceCard.split(' ');
+      card.classList.toggle('is-hidden', filter !== 'all' && !topics.includes(filter));
+    });
+  });
 });
 
 document.querySelectorAll('.links').forEach((nav) => {
@@ -163,13 +180,31 @@ document.querySelectorAll('[data-enquiry]').forEach((form) => form.addEventListe
   event.preventDefault();
   const value = (name) => form.querySelector(`[name="${name}"]`)?.value.trim() || '';
   const name = value('name');
+  const phone = value('phone');
+  const email = value('email');
   const service = value('service');
   const message = value('message');
   const details = [
     `Hello ECOMMY, I am ${name || 'interested in your services'}.`,
+    phone && `My phone number is ${phone}.`,
+    email && `My email is ${email}.`,
     service && `I need help with ${service}.`,
     message && `My requirement: ${message}`,
   ].filter(Boolean).join(' ');
+  const payload = new URLSearchParams({
+    source: 'Website enquiry form',
+    name,
+    email,
+    mobile: phone,
+    service,
+    subject: 'Free marketplace audit enquiry',
+    message,
+    pageUrl: window.location.href,
+    submittedAt: new Date().toISOString(),
+  });
+  // This is intentionally non-blocking: a visitor is always taken straight
+  // to WhatsApp even if a temporary network issue affects the sheet.
+  fetch(enquirySheetEndpoint, { method: 'POST', mode: 'no-cors', keepalive: true, body: payload }).catch(() => {});
   window.location.assign(`https://wa.me/919343153987?text=${encodeURIComponent(details)}`);
 }));
 
@@ -183,7 +218,6 @@ document.querySelectorAll('[data-career-form]').forEach((form) => form.addEventL
 // AI support: captures enquiries and sends them to the existing ECOMMY Leads sheet.
 document.querySelectorAll('.float-wa').forEach((whatsApp) => {
   if (document.querySelector('.ai-support-widget')) return;
-  const sheetEndpoint = 'https://script.google.com/macros/s/AKfycbx-Qbde2BB2WACbXqZytIvd3FB1kZaE09Doz33QqyL1mEYQvlodmo2Y1pmpc95EsAscQQ/exec';
   const assistant = document.createElement('button');
   assistant.type = 'button';
   assistant.className = 'ai-support-widget';
@@ -237,7 +271,7 @@ document.querySelectorAll('.float-wa').forEach((whatsApp) => {
       pageUrl: window.location.href,
       submittedAt: new Date().toISOString(),
     });
-    fetch(sheetEndpoint, { method: 'POST', mode: 'no-cors', body: payload }).catch(() => {});
+    fetch(enquirySheetEndpoint, { method: 'POST', mode: 'no-cors', keepalive: true, body: payload }).catch(() => {});
   };
   const resetConversation = () => {
     messages.innerHTML = '';
